@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj",
+        "projectName": "medical-app",
+        "projectPath": "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj",
+        "packagesPath": "C:\\Users\\ouzat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\ouzat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "Bunifu.UI.WinForms": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "Guna.UI2.WinForms": {
+              "target": "Package",
+              "version": "[2.0.4.6, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

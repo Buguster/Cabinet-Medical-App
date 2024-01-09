@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "miUj+ckBDOMjqS61w5suj+T/scX6l9fVUmbc9rqhS8lu1mxRvLj0rWOMaabB0WTBBQOsTdIuvoKQdboRx8cycg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ouzat\\.nuget\\packages\\bunifu.ui.winforms\\6.3.0\\bunifu.ui.winforms.6.3.0.nupkg.sha512",
+    "C:\\Users\\ouzat\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.6\\guna.ui2.winforms.2.0.4.6.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,281 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.8": {
+      "Bunifu.UI.WinForms/6.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Design"
+        ],
+        "compile": {
+          "lib/net452/Bunifu.Licensing.dll": {},
+          "lib/net452/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net452/Bunifu.Licensing.dll": {},
+          "lib/net452/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Guna.UI2.WinForms/2.0.4.6": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Design",
+          "System.Management",
+          "System.Web"
+        ],
+        "compile": {
+          "lib/net48/Guna.UI2.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Guna.UI2.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.8/win": {
+      "Bunifu.UI.WinForms/6.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Design"
+        ],
+        "compile": {
+          "lib/net452/Bunifu.Licensing.dll": {},
+          "lib/net452/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net452/Bunifu.Licensing.dll": {},
+          "lib/net452/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Guna.UI2.WinForms/2.0.4.6": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Design",
+          "System.Management",
+          "System.Web"
+        ],
+        "compile": {
+          "lib/net48/Guna.UI2.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Guna.UI2.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.8/win-arm64": {
+      "Bunifu.UI.WinForms/6.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Design"
+        ],
+        "compile": {
+          "lib/net452/Bunifu.Licensing.dll": {},
+          "lib/net452/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net452/Bunifu.Licensing.dll": {},
+          "lib/net452/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Guna.UI2.WinForms/2.0.4.6": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Design",
+          "System.Management",
+          "System.Web"
+        ],
+        "compile": {
+          "lib/net48/Guna.UI2.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Guna.UI2.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.8/win-x64": {
+      "Bunifu.UI.WinForms/6.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Design"
+        ],
+        "compile": {
+          "lib/net452/Bunifu.Licensing.dll": {},
+          "lib/net452/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net452/Bunifu.Licensing.dll": {},
+          "lib/net452/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Guna.UI2.WinForms/2.0.4.6": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Design",
+          "System.Management",
+          "System.Web"
+        ],
+        "compile": {
+          "lib/net48/Guna.UI2.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Guna.UI2.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.8/win-x86": {
+      "Bunifu.UI.WinForms/6.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Design"
+        ],
+        "compile": {
+          "lib/net452/Bunifu.Licensing.dll": {},
+          "lib/net452/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net452/Bunifu.Licensing.dll": {},
+          "lib/net452/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Guna.UI2.WinForms/2.0.4.6": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Design",
+          "System.Management",
+          "System.Web"
+        ],
+        "compile": {
+          "lib/net48/Guna.UI2.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Guna.UI2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bunifu.UI.WinForms/6.3.0": {
+      "sha512": "9VY6jFrGC6Ei3E27tvvE7FalfojrT+PWNjFPIy0k83W0Mb+YM56U8AGHvwtjJFbyIAtHhtxj3gIEJu6XA2wJcA==",
+      "type": "package",
+      "path": "bunifu.ui.winforms/6.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.txt",
+        "README.md",
+        "bunifu.ui.winforms.6.3.0.nupkg.sha512",
+        "bunifu.ui.winforms.nuspec",
+        "lib/net452/Bunifu.Licensing.dll",
+        "lib/net452/Bunifu.UI.WinForms.dll",
+        "lib/net452/Bunifu.UI.WinForms.xml"
+      ]
+    },
+    "Guna.UI2.WinForms/2.0.4.6": {
+      "sha512": "NYzSJp7e47Cz3NgGCHvzadash8ycmxxUnpLg4Rr/MSYG9WDw0HOoTI4SkbDW+HbACrf6tsWYCuzWkgvjuM/O6w==",
+      "type": "package",
+      "path": "guna.ui2.winforms/2.0.4.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "guna.ui2.winforms.2.0.4.6.nupkg.sha512",
+        "guna.ui2.winforms.nuspec",
+        "icon.png",
+        "lib/net40/Guna.UI2.dll",
+        "lib/net45/Guna.UI2.dll",
+        "lib/net461/Guna.UI2.dll",
+        "lib/net472/Guna.UI2.dll",
+        "lib/net48/Guna.UI2.dll",
+        "lib/net6.0-windows7.0/Guna.UI2.dll",
+        "lib/net7.0-windows7.0/Guna.UI2.dll",
+        "lib/netcoreapp3.1/Guna.UI2.dll"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.8": [
+      "Bunifu.UI.WinForms >= 6.3.0",
+      "Guna.UI2.WinForms >= 2.0.4.6"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\ouzat\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj",
+      "projectName": "medical-app",
+      "projectPath": "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj",
+      "packagesPath": "C:\\Users\\ouzat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\ouzat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net48"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net48": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net48": {
+        "dependencies": {
+          "Bunifu.UI.WinForms": {
+            "target": "Package",
+            "version": "[6.3.0, )"
+          },
+          "Guna.UI2.WinForms": {
+            "target": "Package",
+            "version": "[2.0.4.6, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-arm64": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}
