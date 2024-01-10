@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj": {}
+    "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj": {
+    "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj",
+        "projectUniqueName": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj",
         "projectName": "medical-app",
-        "projectPath": "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\medical-app.csproj",
+        "projectPath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj",
         "packagesPath": "C:\\Users\\ouzat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ouzat\\Desktop\\School\\3.Système D'information\\Mini-projet-SI\\Sourcecode\\medical-app\\obj\\",
+        "outputPath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [

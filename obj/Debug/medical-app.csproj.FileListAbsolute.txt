@@ -51,3 +51,22 @@ C:\Users\ouzat\Desktop\School\3.Système D'information\Mini-projet-SI\Sourcecode
 C:\Users\ouzat\Desktop\School\3.Système D'information\Mini-projet-SI\Sourcecode\medical-app\obj\Debug\medical-app.exe
 C:\Users\ouzat\Desktop\School\3.Système D'information\Mini-projet-SI\Sourcecode\medical-app\obj\Debug\medical-app.pdb
 C:\Users\ouzat\Desktop\School\3.Système D'information\Mini-projet-SI\Sourcecode\medical-app\bin\Debug\medical-app.pdb
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical-app.csproj.AssemblyReference.cache
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical_app.Acceuil.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical_app.Home.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical_app.Login.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical_app.Patient.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical_app.Properties.Resources.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical-app.csproj.GenerateResource.cache
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical-app.csproj.CoreCompileInputs.cache
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical-app.exe
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical-app.pdb
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\bin\Debug\medical-app.exe.config
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\bin\Debug\medical-app.exe
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\bin\Debug\medical-app.pdb
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\bin\Debug\Bunifu.Licensing.dll
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\bin\Debug\Bunifu.UI.WinForms.dll
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\bin\Debug\Guna.UI2.dll
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\bin\Debug\Bunifu.UI.WinForms.BunifuPages.xml
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.xml
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical-app.csproj.CopyComplete
