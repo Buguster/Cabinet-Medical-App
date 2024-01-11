@@ -15,15 +15,37 @@ namespace medical_app
     public partial class Patient : Form
     {
         private string server_name = ConfigurationManager.ConnectionStrings["medical_app.Properties.Settings.CabinetConnectionString"].ConnectionString;
-        
         int position = -1;
         int id;
         bool edit_record = false;
+
+
         public Patient()
         {
             SqlConnection myconn = new SqlConnection(server_name);
             myconn.Open();
             InitializeComponent();
+            // style 
+            PatientGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            PatientGrid.DefaultCellStyle.Font = new Font("Arial", 12);
+            PatientGrid.DefaultCellStyle.BackColor = Color.LightGray;
+            PatientGrid.DefaultCellStyle.ForeColor = Color.Blue;
+            PatientGrid.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            PatientGrid.DefaultCellStyle.SelectionForeColor = Color.Red;
+        }
+
+        private bool CheckInfo()
+        {
+            return
+                !string.IsNullOrWhiteSpace(inputNom.Text.Trim()) &&
+                !string.IsNullOrWhiteSpace(inputPrenom.Text.Trim()) &&
+                !string.IsNullOrWhiteSpace(dateTimePickerDateNaiss.Text.Trim()) &&
+                !string.IsNullOrWhiteSpace(inputVille.Text.Trim()) &&
+                !string.IsNullOrWhiteSpace(inputTel.Text.Trim()) &&
+                !string.IsNullOrWhiteSpace(dateTimePickerDateCreated.Text.Trim()) &&
+                !string.IsNullOrWhiteSpace(inputSymptome.Text.Trim()) &&
+                !string.IsNullOrWhiteSpace(inputEtat.Text.Trim()) &&
+                !string.IsNullOrWhiteSpace(inputSexe.Text.Trim());
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -39,13 +61,15 @@ namespace medical_app
             this.inputSymptome.Text = PatientGrid.Rows[position].Cells[6].Value.ToString(); 
             this.inputEtat.Text = PatientGrid.Rows[position].Cells[7].Value.ToString();
             this.inputSexe.Text = PatientGrid.Rows[position].Cells[8].Value.ToString();
-
             edit_record = true;
+
+
         }
 
         private void Patient_Load(object sender, EventArgs e)
         {
             this.PatientGrid.ReadOnly = true;
+            this.PatientGrid.AllowUserToAddRows = false;
         }
 
         private void bunifuTextbox1_OnTextChange(object sender, EventArgs e)
@@ -56,19 +80,6 @@ namespace medical_app
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }
-        private bool CheckInfo()
-        {
-            return
-                !string.IsNullOrWhiteSpace(inputNom.Text.Trim()) &&
-                !string.IsNullOrWhiteSpace(inputPrenom.Text.Trim()) &&
-                !string.IsNullOrWhiteSpace(dateTimePickerDateNaiss.Text.Trim()) &&
-                !string.IsNullOrWhiteSpace(inputVille.Text.Trim()) &&
-                !string.IsNullOrWhiteSpace(inputTel.Text.Trim()) &&
-                !string.IsNullOrWhiteSpace(dateTimePickerDateCreated.Text.Trim()) &&
-                !string.IsNullOrWhiteSpace(inputSymptome.Text.Trim()) &&
-                !string.IsNullOrWhiteSpace(inputEtat.Text.Trim()) &&
-                !string.IsNullOrWhiteSpace(inputSexe.Text.Trim());
         }
 
         private void ajouter_Click(object sender, EventArgs e)
@@ -203,6 +214,98 @@ namespace medical_app
             inputEtat.Text = "";
             inputSexe.Text = "";
             inputNom.Focus();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Acceuil acceuil = new Acceuil();
+            acceuil.Show();
+            this.Hide();
+        }
+
+        private void modifier_Click(object sender, EventArgs e)
+        {
+            if (!edit_record)
+                return;
+
+            if (!CheckInfo())
+            {
+                using (SqlConnection myconn = new SqlConnection(server_name))
+                {
+                    DialogResult dialog = MessageBox.Show("Êtes-vous sûr de vouloir modifier ce patient ?", "Confirmation", MessageBoxButtons.YesNo);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        id = int.Parse(this.PatientGrid.Rows[position].Cells[0].Value.ToString());
+
+                        String Query = "UPDATE Patient SET Nom = @Nom, Prenom = @Prenom, date_creation_dossier = @datecreated," +
+                        "ville = @Ville, telephone = @Tel, date_naissance = @Datenaiss, symptômes = @Symptome," +
+                        "Etat = @Etat, sexe = @Sexe WHERE id = @id;";
+
+                        SqlCommand command = new SqlCommand(Query, myconn);
+                        command.Parameters.AddWithValue("@Nom", inputNom.Text.Trim());
+                        command.Parameters.AddWithValue("@Prenom", inputPrenom.Text.Trim());
+                        command.Parameters.AddWithValue("@datecreated", dateTimePickerDateCreated.Value);
+                        command.Parameters.AddWithValue("@Ville", inputVille.Text.Trim());
+                        command.Parameters.AddWithValue("@Tel", inputTel.Text.Trim());
+                        command.Parameters.AddWithValue("@Datenaiss", dateTimePickerDateNaiss.Value);
+                        command.Parameters.AddWithValue("@Symptome", inputSymptome.Text.Trim());
+                        command.Parameters.AddWithValue("@Etat", inputEtat.Text.Trim());
+                        command.Parameters.AddWithValue("@Sexe", inputSexe.Text.Trim());
+                        command.Parameters.AddWithValue("@id", id); // Add the id parameter
+
+                        myconn.Open();
+                        command.ExecuteNonQuery();
+                        myconn.Close();
+                        afficher_Click(sender, e);
+                        MessageBox.Show("Patient modifié bien terminé ");
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("veuillez saisir tous les champs!!");
+            }
+        }
+
+        private void inputsearchname_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rechercher_Click(object sender, EventArgs e)
+        {
+            if (inputsearchname.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("SVP veuillez saisir un nom ");
+                return;
+            }
+
+            using (SqlConnection myconn = new SqlConnection(server_name))
+            {
+                string query = "SELECT COUNT(*) FROM Patient WHERE Nom = @nom";
+                SqlCommand command = new SqlCommand(query, myconn);
+                command.Parameters.AddWithValue("@nom", inputsearchname.Text.Trim());
+
+                myconn.Open();
+
+                int count = Convert.ToInt32(command.ExecuteScalar());
+
+                myconn.Close();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Patient déja client du cabinet");
+                }
+                else
+                {
+                    MessageBox.Show("n'existe pas veuillez l'ajouter");
+                }
+            }
+
         }
     }
 }
