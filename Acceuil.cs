@@ -36,7 +36,9 @@ namespace medical_app
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Ordonance ordonance = new Ordonance();
+            ordonance.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -46,7 +48,9 @@ namespace medical_app
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            paiement paiement = new paiement();
+            paiement.Show();
+            this.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -76,6 +80,32 @@ namespace medical_app
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void rechercher_Click(object sender, EventArgs e)
+        {
+            Ordonance ord = new Ordonance();
+            ord.Show();
+            this.Hide();
+        }
+
+        private void stagiare_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void patient_Click(object sender, EventArgs e)
+        {
+            Patient patient = new Patient();
+            patient.Show();
+            this.Hide();
+        }
+
+        private void paiement_Click(object sender, EventArgs e)
+        {
+            paiement paiement = new paiement();
+            paiement.Show();
+            this.Hide();
         }
     }
 }

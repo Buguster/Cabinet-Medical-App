@@ -574,7 +574,7 @@
             this.rechercher.ActiveFillColor = System.Drawing.Color.Salmon;
             this.rechercher.ActiveForecolor = System.Drawing.Color.White;
             this.rechercher.ActiveLineColor = System.Drawing.Color.Navy;
-            this.rechercher.BackColor = System.Drawing.Color.Transparent;
+            this.rechercher.BackColor = System.Drawing.Color.Navy;
             this.rechercher.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rechercher.BackgroundImage")));
             this.rechercher.ButtonText = "rechercher";
             this.rechercher.Cursor = System.Windows.Forms.Cursors.Hand;
