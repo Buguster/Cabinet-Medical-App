@@ -22,51 +22,60 @@ namespace medical_app
 
         private void ajouter_Click(object sender, EventArgs e)
         {
-                try
+            try
+            {
+                using (SqlConnection myconn = new SqlConnection(server_name))
                 {
-                    using (SqlConnection myconn = new SqlConnection(server_name))
+                    myconn.Open();
+
+
+                    string query_1 = "SELECT COUNT(*) FROM Patient WHERE id = @id";
+                    SqlCommand cmd = myconn.CreateCommand();
+                    cmd.Parameters.AddWithValue("@id", int.Parse(patient_ID.Text));
+
+                    cmd.CommandText = query_1;
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (count > 0)
                     {
-                        myconn.Open();
+                        string query_2 = "INSERT INTO RDV (date, id_patient) VALUES (@RDVDate, @PatientID)";
+                        SqlCommand command = new SqlCommand(query_2, myconn);
 
-                        
-                        string query_1 = "SELECT COUNT(*) FROM Patient WHERE id = @id";
-                        SqlCommand cmd = myconn.CreateCommand();
-                        cmd.Parameters.AddWithValue("@id", int.Parse(patient_ID.Text));
-                    
-                        cmd.CommandText = query_1;
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-                        if (count > 0)
-                        {
-                            string query_2 = "INSERT INTO RDV (date, id_patient) VALUES (@RDVDate, @PatientID)";
-                            SqlCommand command = new SqlCommand(query_2, myconn);
+                        command.Parameters.AddWithValue("@RDVDate", DateTimepickerdateRDV.Value);
+                        command.Parameters.AddWithValue("@PatientID", int.Parse(patient_ID.Text));
 
-                            command.Parameters.AddWithValue("@RDVDate", DateTimepickerdateRDV.Value);
-                            command.Parameters.AddWithValue("@PatientID", int.Parse(patient_ID.Text));
+                        int affectedRows = command.ExecuteNonQuery();
 
-                            int affectedRows = command.ExecuteNonQuery();
-
-                            MessageBox.Show($"{affectedRows} row(s) affected");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Patient Introuvable");
-                        }
+                        MessageBox.Show($"{affectedRows} row(s) affected");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Patient Introuvable");
                     }
                 }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+            // style pour RDVGrid
             RDVGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
             RDVGrid.DefaultCellStyle.Font = new Font("Arial", 12);
             RDVGrid.DefaultCellStyle.BackColor = Color.LightGray;
             RDVGrid.DefaultCellStyle.ForeColor = Color.Blue;
             RDVGrid.DefaultCellStyle.SelectionBackColor = Color.Yellow;
             RDVGrid.DefaultCellStyle.SelectionForeColor = Color.Red;
+
+            // style pour Grid_Filter_RDV
+            Grid_Filter_RDV.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            Grid_Filter_RDV.DefaultCellStyle.Font = new Font("Arial", 12);
+            Grid_Filter_RDV.DefaultCellStyle.BackColor = Color.LightGray;
+            Grid_Filter_RDV.DefaultCellStyle.ForeColor = Color.Blue;
+            Grid_Filter_RDV.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            Grid_Filter_RDV.DefaultCellStyle.SelectionForeColor = Color.Red;
         }
 
         private void afficher_Click(object sender, EventArgs e)
@@ -192,5 +201,83 @@ namespace medical_app
                 }
             }
         }
+
+        private void supprimer_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection myconn = new SqlConnection(server_name))
+            {
+                try
+                {
+                    myconn.Open();
+                    if (myconn.State == ConnectionState.Open)
+                    {
+                        string query = "DELETE * FROM RDV";
+                        SqlCommand command = new SqlCommand(query, myconn);
+
+                        RDVGrid.Rows.Clear();
+                        using (SqlDataReader data = command.ExecuteReader())
+                        {
+                            if (data.HasRows)
+                            {
+                                while (data.Read())
+                                {
+                                    RDVGrid.Rows.Add(data[0], data[1], data[2]);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("table est vide");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("veuillez connecter");
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void rechercher_Click(object sender, EventArgs e)
+        {
+            if (inputsearchname.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("SVP veuillez saisir un nom ");
+                return;
+            }
+
+            using (SqlConnection myconn = new SqlConnection(server_name))
+            {
+                string query = "SELECT id FROM Patient WHERE Nom = @nom";
+                SqlCommand command = new SqlCommand(query, myconn);
+                command.Parameters.AddWithValue("@nom", inputsearchname.Text.Trim());
+
+                myconn.Open();
+
+                object result = command.ExecuteScalar();
+
+                myconn.Close();
+
+                if (result != null)
+                {
+                    int patientId = Convert.ToInt32(result);
+                    MessageBox.Show("Patient Exist");
+                    patient_ID.Text = patientId.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("N'existe pas, veuillez l'ajouter");
+                }
+            }
+        }
+
+        private void patient_ID_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}

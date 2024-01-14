@@ -101,6 +101,7 @@ namespace medical_app
 
                     SqlCommand command = new SqlCommand(query, myconn);
 
+
                     command.Parameters.AddWithValue("@Nom", inputNom.Text.Trim());
                     command.Parameters.AddWithValue("@Prenom", inputPrenom.Text.Trim());
                     command.Parameters.AddWithValue("@datecreated", dateTimePickerDateCreated.Value);
@@ -229,7 +230,7 @@ namespace medical_app
         {
             if (!edit_record)
                 return;
-
+                
             if (!CheckInfo())
             {
                 using (SqlConnection myconn = new SqlConnection(server_name))
@@ -249,7 +250,7 @@ namespace medical_app
                         command.Parameters.AddWithValue("@datecreated", dateTimePickerDateCreated.Value);
                         command.Parameters.AddWithValue("@Ville", inputVille.Text.Trim());
                         command.Parameters.AddWithValue("@Tel", inputTel.Text.Trim());
-                        command.Parameters.AddWithValue("@Datenaiss", dateTimePickerDateNaiss.Value);
+                        command.Parameters.AddWithValue("@Datenaiss", dateTimePickerDateNaiss.Value.ToString(""));
                         command.Parameters.AddWithValue("@Symptome", inputSymptome.Text.Trim());
                         command.Parameters.AddWithValue("@Etat", inputEtat.Text.Trim());
                         command.Parameters.AddWithValue("@Sexe", inputSexe.Text.Trim());

@@ -152,5 +152,15 @@ namespace medical_app
         {
 
         }
+
+        private void Rendez_vous_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
  }

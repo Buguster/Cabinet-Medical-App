@@ -49,13 +49,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(330, 71);
             this.panel2.TabIndex = 6;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // login_button
             // 
             this.login_button.ActiveBorderThickness = 1;
             this.login_button.ActiveCornerRadius = 20;
             this.login_button.ActiveFillColor = System.Drawing.Color.Navy;
-            this.login_button.ActiveForecolor = System.Drawing.Color.White;
+            this.login_button.ActiveForecolor = System.Drawing.Color.LightSteelBlue;
             this.login_button.ActiveLineColor = System.Drawing.Color.Sienna;
             this.login_button.BackColor = System.Drawing.Color.DarkGray;
             this.login_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("login_button.BackgroundImage")));
@@ -66,12 +67,12 @@
             this.login_button.IdleBorderThickness = 1;
             this.login_button.IdleCornerRadius = 20;
             this.login_button.IdleFillColor = System.Drawing.Color.White;
-            this.login_button.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.login_button.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.login_button.Location = new System.Drawing.Point(116, 17);
+            this.login_button.IdleForecolor = System.Drawing.Color.Navy;
+            this.login_button.IdleLineColor = System.Drawing.Color.Blue;
+            this.login_button.Location = new System.Drawing.Point(115, 5);
             this.login_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.login_button.Name = "login_button";
-            this.login_button.Size = new System.Drawing.Size(99, 38);
+            this.login_button.Size = new System.Drawing.Size(99, 55);
             this.login_button.TabIndex = 10;
             this.login_button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.login_button.Click += new System.EventHandler(this.bunifuThinButton21_Click);

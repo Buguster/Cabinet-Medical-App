@@ -30,40 +30,45 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RDV));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.selected_time = new System.Windows.Forms.ComboBox();
-            this.RDVGrid = new System.Windows.Forms.DataGridView();
-            this.ID_Ordonnance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type_medi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_ordonnance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ajouter = new System.Windows.Forms.Button();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.supprimer = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DateTimepickerdateRDV = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.patient_ID = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Find_Patient_ID = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.inputsearchname = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.load_RDV = new System.Windows.Forms.Button();
+            this.confirmer = new Bunifu.Framework.UI.BunifuThinButton2();
             this.Grid_Filter_RDV = new System.Windows.Forms.DataGridView();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prénom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Téléphone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.confirmer = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.load_RDV = new System.Windows.Forms.Button();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.selected_time = new System.Windows.Forms.ComboBox();
+            this.RDVGrid = new System.Windows.Forms.DataGridView();
+            this.ID_RDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type_rdv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_patient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ajouter = new System.Windows.Forms.Button();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.form_RDV = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DateTimepickerdateRDV = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.patient_ID = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Filter_RDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RDVGrid)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_Filter_RDV)).BeginInit();
+            this.form_RDV.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.Find_Patient_ID);
+            this.panel1.Controls.Add(this.inputsearchname);
+            this.panel1.Controls.Add(this.bunifuCustomLabel3);
             this.panel1.Controls.Add(this.load_RDV);
             this.panel1.Controls.Add(this.confirmer);
             this.panel1.Controls.Add(this.Grid_Filter_RDV);
@@ -71,7 +76,7 @@
             this.panel1.Controls.Add(this.selected_time);
             this.panel1.Controls.Add(this.RDVGrid);
             this.panel1.Controls.Add(this.bunifuGradientPanel1);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.form_RDV);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -79,212 +84,99 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // bunifuCustomLabel2
+            // Find_Patient_ID
             // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(813, 63);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(130, 24);
-            this.bunifuCustomLabel2.TabIndex = 64;
-            this.bunifuCustomLabel2.Text = "Filtrer les RDV";
+            this.Find_Patient_ID.ActiveBorderThickness = 1;
+            this.Find_Patient_ID.ActiveCornerRadius = 20;
+            this.Find_Patient_ID.ActiveFillColor = System.Drawing.Color.Salmon;
+            this.Find_Patient_ID.ActiveForecolor = System.Drawing.Color.White;
+            this.Find_Patient_ID.ActiveLineColor = System.Drawing.Color.Navy;
+            this.Find_Patient_ID.BackColor = System.Drawing.Color.Navy;
+            this.Find_Patient_ID.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Find_Patient_ID.BackgroundImage")));
+            this.Find_Patient_ID.ButtonText = "Patient_ID";
+            this.Find_Patient_ID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Find_Patient_ID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Find_Patient_ID.ForeColor = System.Drawing.Color.SeaGreen;
+            this.Find_Patient_ID.IdleBorderThickness = 1;
+            this.Find_Patient_ID.IdleCornerRadius = 20;
+            this.Find_Patient_ID.IdleFillColor = System.Drawing.Color.White;
+            this.Find_Patient_ID.IdleForecolor = System.Drawing.Color.Navy;
+            this.Find_Patient_ID.IdleLineColor = System.Drawing.Color.Navy;
+            this.Find_Patient_ID.Location = new System.Drawing.Point(409, 0);
+            this.Find_Patient_ID.Margin = new System.Windows.Forms.Padding(5);
+            this.Find_Patient_ID.Name = "Find_Patient_ID";
+            this.Find_Patient_ID.Size = new System.Drawing.Size(103, 41);
+            this.Find_Patient_ID.TabIndex = 70;
+            this.Find_Patient_ID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Find_Patient_ID.Click += new System.EventHandler(this.rechercher_Click);
             // 
-            // selected_time
+            // inputsearchname
             // 
-            this.selected_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selected_time.FormattingEnabled = true;
-            this.selected_time.Items.AddRange(new object[] {
-            "Aujourd\'hui",
-            "Hier",
-            "SemaineDernière",
-            "SemaineProchaine"});
-            this.selected_time.Location = new System.Drawing.Point(970, 59);
-            this.selected_time.Name = "selected_time";
-            this.selected_time.Size = new System.Drawing.Size(121, 28);
-            this.selected_time.TabIndex = 63;
-            this.selected_time.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.inputsearchname.BackColor = System.Drawing.Color.MintCream;
+            this.inputsearchname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputsearchname.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.inputsearchname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.inputsearchname.HintForeColor = System.Drawing.Color.Empty;
+            this.inputsearchname.HintText = "";
+            this.inputsearchname.isPassword = false;
+            this.inputsearchname.LineFocusedColor = System.Drawing.Color.Blue;
+            this.inputsearchname.LineIdleColor = System.Drawing.Color.Gray;
+            this.inputsearchname.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.inputsearchname.LineThickness = 3;
+            this.inputsearchname.Location = new System.Drawing.Point(216, 4);
+            this.inputsearchname.Margin = new System.Windows.Forms.Padding(4);
+            this.inputsearchname.Name = "inputsearchname";
+            this.inputsearchname.Size = new System.Drawing.Size(183, 44);
+            this.inputsearchname.TabIndex = 69;
+            this.inputsearchname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // RDVGrid
+            // bunifuCustomLabel3
             // 
-            this.RDVGrid.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.RDVGrid.AllowUserToOrderColumns = true;
-            this.RDVGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.RDVGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.RDVGrid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.RDVGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.RDVGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RDVGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Ordonnance,
-            this.type_medi,
-            this.date_ordonnance});
-            this.RDVGrid.Location = new System.Drawing.Point(212, 303);
-            this.RDVGrid.Name = "RDVGrid";
-            this.RDVGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.RDVGrid.RowHeadersWidth = 50;
-            this.RDVGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.RDVGrid.Size = new System.Drawing.Size(333, 301);
-            this.RDVGrid.TabIndex = 62;
-            this.RDVGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RDVGrid_CellContentClick);
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(13, 9);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(197, 20);
+            this.bunifuCustomLabel3.TabIndex = 68;
+            this.bunifuCustomLabel3.Text = "tapez le nom recherché";
             // 
-            // ID_Ordonnance
+            // load_RDV
             // 
-            this.ID_Ordonnance.HeaderText = "ID_Ordonance";
-            this.ID_Ordonnance.Name = "ID_Ordonnance";
+            this.load_RDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.load_RDV.Location = new System.Drawing.Point(12, 268);
+            this.load_RDV.Name = "load_RDV";
+            this.load_RDV.Size = new System.Drawing.Size(158, 29);
+            this.load_RDV.TabIndex = 67;
+            this.load_RDV.Text = "Liste Des RDV";
+            this.load_RDV.UseVisualStyleBackColor = true;
+            this.load_RDV.Click += new System.EventHandler(this.load_patient_Click);
             // 
-            // type_medi
+            // confirmer
             // 
-            this.type_medi.HeaderText = "Type Médicaments";
-            this.type_medi.Name = "type_medi";
-            // 
-            // date_ordonnance
-            // 
-            this.date_ordonnance.HeaderText = "Date Ordonance";
-            this.date_ordonnance.Name = "date_ordonnance";
-            // 
-            // bunifuGradientPanel1
-            // 
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.label2);
-            this.bunifuGradientPanel1.Controls.Add(this.ajouter);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
-            this.bunifuGradientPanel1.Controls.Add(this.supprimer);
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(12, 254);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(160, 118);
-            this.bunifuGradientPanel1.TabIndex = 61;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Navy;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(9, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 24);
-            this.label2.TabIndex = 60;
-            this.label2.Text = "Opération RDV";
-            // 
-            // ajouter
-            // 
-            this.ajouter.BackColor = System.Drawing.Color.Green;
-            this.ajouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ajouter.ForeColor = System.Drawing.Color.White;
-            this.ajouter.Location = new System.Drawing.Point(21, 27);
-            this.ajouter.Name = "ajouter";
-            this.ajouter.Size = new System.Drawing.Size(120, 39);
-            this.ajouter.TabIndex = 53;
-            this.ajouter.Text = "Ajouter";
-            this.ajouter.UseVisualStyleBackColor = false;
-            this.ajouter.Click += new System.EventHandler(this.ajouter_Click);
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(3, 9);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(0, 13);
-            this.bunifuCustomLabel1.TabIndex = 59;
-            // 
-            // supprimer
-            // 
-            this.supprimer.BackColor = System.Drawing.Color.Red;
-            this.supprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supprimer.ForeColor = System.Drawing.Color.White;
-            this.supprimer.Location = new System.Drawing.Point(21, 72);
-            this.supprimer.Name = "supprimer";
-            this.supprimer.Size = new System.Drawing.Size(120, 39);
-            this.supprimer.TabIndex = 55;
-            this.supprimer.Text = "Supprimer";
-            this.supprimer.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Azure;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.DateTimepickerdateRDV);
-            this.panel2.Controls.Add(this.patient_ID);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(12, 29);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(533, 190);
-            this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Navy;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(99, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 24);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "Enregistrements d\'un Rendez-vous\r\n";
-            // 
-            // DateTimepickerdateRDV
-            // 
-            this.DateTimepickerdateRDV.BackColor = System.Drawing.Color.Navy;
-            this.DateTimepickerdateRDV.BorderRadius = 0;
-            this.DateTimepickerdateRDV.ForeColor = System.Drawing.Color.White;
-            this.DateTimepickerdateRDV.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimepickerdateRDV.FormatCustom = null;
-            this.DateTimepickerdateRDV.Location = new System.Drawing.Point(204, 117);
-            this.DateTimepickerdateRDV.Name = "DateTimepickerdateRDV";
-            this.DateTimepickerdateRDV.Size = new System.Drawing.Size(248, 36);
-            this.DateTimepickerdateRDV.TabIndex = 52;
-            this.DateTimepickerdateRDV.Value = new System.DateTime(2024, 1, 11, 14, 22, 38, 130);
-            // 
-            // patient_ID
-            // 
-            this.patient_ID.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.patient_ID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.patient_ID.BorderColorFocused = System.Drawing.Color.Blue;
-            this.patient_ID.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.patient_ID.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.patient_ID.BorderThickness = 3;
-            this.patient_ID.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.patient_ID.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patient_ID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.patient_ID.isPassword = false;
-            this.patient_ID.Location = new System.Drawing.Point(181, 46);
-            this.patient_ID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.patient_ID.Name = "patient_ID";
-            this.patient_ID.Size = new System.Drawing.Size(90, 56);
-            this.patient_ID.TabIndex = 56;
-            this.patient_ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.patient_ID.UseWaitCursor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(49, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 24);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "ID_Patient";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(49, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 24);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Date Ordonance";
+            this.confirmer.ActiveBorderThickness = 1;
+            this.confirmer.ActiveCornerRadius = 20;
+            this.confirmer.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.confirmer.ActiveForecolor = System.Drawing.Color.White;
+            this.confirmer.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.confirmer.BackColor = System.Drawing.Color.Navy;
+            this.confirmer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmer.BackgroundImage")));
+            this.confirmer.ButtonText = "Confirmer";
+            this.confirmer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.confirmer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmer.ForeColor = System.Drawing.Color.SeaGreen;
+            this.confirmer.IdleBorderThickness = 1;
+            this.confirmer.IdleCornerRadius = 20;
+            this.confirmer.IdleFillColor = System.Drawing.Color.White;
+            this.confirmer.IdleForecolor = System.Drawing.Color.Navy;
+            this.confirmer.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.confirmer.Location = new System.Drawing.Point(986, 95);
+            this.confirmer.Margin = new System.Windows.Forms.Padding(5);
+            this.confirmer.Name = "confirmer";
+            this.confirmer.Size = new System.Drawing.Size(106, 41);
+            this.confirmer.TabIndex = 66;
+            this.confirmer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.confirmer.Click += new System.EventHandler(this.confirmer_Click);
             // 
             // Grid_Filter_RDV
             // 
@@ -329,42 +221,200 @@
             this.date.HeaderText = "date_rdv";
             this.date.Name = "date";
             // 
-            // confirmer
+            // bunifuCustomLabel2
             // 
-            this.confirmer.ActiveBorderThickness = 1;
-            this.confirmer.ActiveCornerRadius = 20;
-            this.confirmer.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.confirmer.ActiveForecolor = System.Drawing.Color.White;
-            this.confirmer.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.confirmer.BackColor = System.Drawing.Color.Navy;
-            this.confirmer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmer.BackgroundImage")));
-            this.confirmer.ButtonText = "Confirmer";
-            this.confirmer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.confirmer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmer.ForeColor = System.Drawing.Color.SeaGreen;
-            this.confirmer.IdleBorderThickness = 1;
-            this.confirmer.IdleCornerRadius = 20;
-            this.confirmer.IdleFillColor = System.Drawing.Color.White;
-            this.confirmer.IdleForecolor = System.Drawing.Color.Navy;
-            this.confirmer.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.confirmer.Location = new System.Drawing.Point(986, 95);
-            this.confirmer.Margin = new System.Windows.Forms.Padding(5);
-            this.confirmer.Name = "confirmer";
-            this.confirmer.Size = new System.Drawing.Size(106, 41);
-            this.confirmer.TabIndex = 66;
-            this.confirmer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.confirmer.Click += new System.EventHandler(this.confirmer_Click);
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(813, 63);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(130, 24);
+            this.bunifuCustomLabel2.TabIndex = 64;
+            this.bunifuCustomLabel2.Text = "Filtrer les RDV";
             // 
-            // load_RDV
+            // selected_time
             // 
-            this.load_RDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.load_RDV.Location = new System.Drawing.Point(212, 255);
-            this.load_RDV.Name = "load_RDV";
-            this.load_RDV.Size = new System.Drawing.Size(204, 42);
-            this.load_RDV.TabIndex = 67;
-            this.load_RDV.Text = "Liste Des RDV";
-            this.load_RDV.UseVisualStyleBackColor = true;
-            this.load_RDV.Click += new System.EventHandler(this.load_patient_Click);
+            this.selected_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selected_time.FormattingEnabled = true;
+            this.selected_time.Items.AddRange(new object[] {
+            "Aujourd\'hui",
+            "Hier",
+            "SemaineDernière",
+            "SemaineProchaine"});
+            this.selected_time.Location = new System.Drawing.Point(970, 59);
+            this.selected_time.Name = "selected_time";
+            this.selected_time.Size = new System.Drawing.Size(121, 28);
+            this.selected_time.TabIndex = 63;
+            this.selected_time.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // RDVGrid
+            // 
+            this.RDVGrid.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.RDVGrid.AllowUserToOrderColumns = true;
+            this.RDVGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.RDVGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.RDVGrid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.RDVGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.RDVGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RDVGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_RDV,
+            this.type_rdv,
+            this.Id_patient});
+            this.RDVGrid.Location = new System.Drawing.Point(12, 303);
+            this.RDVGrid.Name = "RDVGrid";
+            this.RDVGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.RDVGrid.RowHeadersWidth = 50;
+            this.RDVGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.RDVGrid.Size = new System.Drawing.Size(533, 301);
+            this.RDVGrid.TabIndex = 62;
+            this.RDVGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RDVGrid_CellContentClick);
+            // 
+            // ID_RDV
+            // 
+            this.ID_RDV.HeaderText = "ID";
+            this.ID_RDV.Name = "ID_RDV";
+            // 
+            // type_rdv
+            // 
+            this.type_rdv.HeaderText = "date_rdv";
+            this.type_rdv.Name = "type_rdv";
+            // 
+            // Id_patient
+            // 
+            this.Id_patient.HeaderText = "ID_Patient";
+            this.Id_patient.Name = "Id_patient";
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.label2);
+            this.bunifuGradientPanel1.Controls.Add(this.ajouter);
+            this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(577, 56);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(160, 76);
+            this.bunifuGradientPanel1.TabIndex = 61;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Navy;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 24);
+            this.label2.TabIndex = 60;
+            this.label2.Text = "Opération RDV";
+            // 
+            // ajouter
+            // 
+            this.ajouter.BackColor = System.Drawing.Color.Green;
+            this.ajouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ajouter.ForeColor = System.Drawing.Color.White;
+            this.ajouter.Location = new System.Drawing.Point(21, 27);
+            this.ajouter.Name = "ajouter";
+            this.ajouter.Size = new System.Drawing.Size(120, 39);
+            this.ajouter.TabIndex = 53;
+            this.ajouter.Text = "Ajouter";
+            this.ajouter.UseVisualStyleBackColor = false;
+            this.ajouter.Click += new System.EventHandler(this.ajouter_Click);
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(3, 9);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(0, 13);
+            this.bunifuCustomLabel1.TabIndex = 59;
+            // 
+            // form_RDV
+            // 
+            this.form_RDV.BackColor = System.Drawing.Color.Azure;
+            this.form_RDV.Controls.Add(this.label1);
+            this.form_RDV.Controls.Add(this.DateTimepickerdateRDV);
+            this.form_RDV.Controls.Add(this.patient_ID);
+            this.form_RDV.Controls.Add(this.label4);
+            this.form_RDV.Controls.Add(this.label3);
+            this.form_RDV.Location = new System.Drawing.Point(12, 56);
+            this.form_RDV.Name = "form_RDV";
+            this.form_RDV.Size = new System.Drawing.Size(533, 190);
+            this.form_RDV.TabIndex = 4;
+            this.form_RDV.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Navy;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(99, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(338, 24);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Enregistrements d\'un Rendez-vous\r\n";
+            // 
+            // DateTimepickerdateRDV
+            // 
+            this.DateTimepickerdateRDV.BackColor = System.Drawing.Color.Navy;
+            this.DateTimepickerdateRDV.BorderRadius = 0;
+            this.DateTimepickerdateRDV.ForeColor = System.Drawing.Color.White;
+            this.DateTimepickerdateRDV.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateTimepickerdateRDV.FormatCustom = null;
+            this.DateTimepickerdateRDV.Location = new System.Drawing.Point(204, 117);
+            this.DateTimepickerdateRDV.Name = "DateTimepickerdateRDV";
+            this.DateTimepickerdateRDV.Size = new System.Drawing.Size(248, 36);
+            this.DateTimepickerdateRDV.TabIndex = 52;
+            this.DateTimepickerdateRDV.Value = new System.DateTime(2024, 1, 11, 14, 22, 38, 130);
+            // 
+            // patient_ID
+            // 
+            this.patient_ID.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.patient_ID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.patient_ID.BorderColorFocused = System.Drawing.Color.Blue;
+            this.patient_ID.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.patient_ID.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.patient_ID.BorderThickness = 3;
+            this.patient_ID.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.patient_ID.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patient_ID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.patient_ID.isPassword = false;
+            this.patient_ID.Location = new System.Drawing.Point(166, 51);
+            this.patient_ID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.patient_ID.Name = "patient_ID";
+            this.patient_ID.Size = new System.Drawing.Size(90, 56);
+            this.patient_ID.TabIndex = 56;
+            this.patient_ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.patient_ID.UseWaitCursor = true;
+            this.patient_ID.OnValueChanged += new System.EventHandler(this.patient_ID_OnValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(49, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 24);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "ID_Patient";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(49, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 24);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "Date Ordonance";
             // 
             // RDV
             // 
@@ -377,12 +427,12 @@
             this.Text = "RDV";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Filter_RDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RDVGrid)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_Filter_RDV)).EndInit();
+            this.form_RDV.ResumeLayout(false);
+            this.form_RDV.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -390,7 +440,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel form_RDV;
         private Bunifu.Framework.UI.BunifuMetroTextbox patient_ID;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuDatepicker DateTimepickerdateRDV;
@@ -400,11 +450,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ajouter;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private System.Windows.Forms.Button supprimer;
         private System.Windows.Forms.DataGridView RDVGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Ordonnance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type_medi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_ordonnance;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private System.Windows.Forms.ComboBox selected_time;
         private System.Windows.Forms.DataGridView Grid_Filter_RDV;
@@ -414,5 +460,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private Bunifu.Framework.UI.BunifuThinButton2 confirmer;
         private System.Windows.Forms.Button load_RDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_RDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type_rdv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_patient;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox inputsearchname;
+        private Bunifu.Framework.UI.BunifuThinButton2 Find_Patient_ID;
     }
 }
