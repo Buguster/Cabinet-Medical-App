@@ -14,9 +14,8 @@ namespace medical_app
 {
     public partial class Patient : Form
     {
-        private string server_name = ConfigurationManager.ConnectionStrings["medical_app.Properties.Settings.CabinetConnectionString"].ConnectionString;
-        int position = -1;
-        int id;
+        private string server_name = ConfigurationManager.ConnectionStrings["server_me"].ConnectionString;
+        int position = -1, id, patientID;
         bool edit_record = false;
 
 
@@ -25,13 +24,6 @@ namespace medical_app
             SqlConnection myconn = new SqlConnection(server_name);
             myconn.Open();
             InitializeComponent();
-            // style 
-            PatientGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
-            PatientGrid.DefaultCellStyle.Font = new Font("Arial", 12);
-            PatientGrid.DefaultCellStyle.BackColor = Color.LightGray;
-            PatientGrid.DefaultCellStyle.ForeColor = Color.Blue;
-            PatientGrid.DefaultCellStyle.SelectionBackColor = Color.Yellow;
-            PatientGrid.DefaultCellStyle.SelectionForeColor = Color.Red;
         }
 
         private bool CheckInfo()
@@ -63,14 +55,24 @@ namespace medical_app
             this.inputSexe.Text = PatientGrid.Rows[position].Cells[8].Value.ToString();
             edit_record = true;
 
+            // pour le RDV 
 
+            int patientID = int.Parse(this.PatientGrid.Rows[position].Cells[0].Value.ToString());
         }
 
         private void Patient_Load(object sender, EventArgs e)
         {
             this.PatientGrid.ReadOnly = true;
             this.PatientGrid.AllowUserToAddRows = false;
-        }
+
+            // style 
+            PatientGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            PatientGrid.DefaultCellStyle.Font = new Font("Arial", 12);
+            PatientGrid.DefaultCellStyle.BackColor = Color.LightGray;
+            PatientGrid.DefaultCellStyle.ForeColor = Color.Blue;
+            PatientGrid.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            PatientGrid.DefaultCellStyle.SelectionForeColor = Color.Red;
+        }   
 
         private void bunifuTextbox1_OnTextChange(object sender, EventArgs e)
         {
@@ -143,7 +145,7 @@ namespace medical_app
                                 while (data.Read())
                                 {
                                     PatientGrid.Rows.Add(data[0], data[1], data[2], data[3], data[4], data[5], 
-                                                          data[6], data[7], data[8], data[9], data[10]);
+                                                          data[6], data[7], data[8], data[9]);
                                 }
                             }
                             else

@@ -118,6 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="login_button.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGMAAAAmCAYAAADQriVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJrSURBVGhD7ZrPSxRhHMb7izp16NKhggiDgoqCxCLpF65R
+        u0T5I6jEClJXVt1VZ3bb3LRtiSyK6BCJUUbUISQk8WAQ7MEiivAgdXjimZkmlx0FTWfew/OBBxZmdw/f
+        D/O+35nvu6FUKkExI5JhUCTDoEiGQZEMgyIZBmVZGSN3i7iU70Kd1YR9A3Fs7T2OjR0HlRWENWPtDlnn
+        0ZK7gaHi7cBaM0vKuHYrhW19J5B40IWnHyfw7vMUyj++QKwM1oy1ez7zFs2Pe7A9fRIX852BNa+SQXP1
+        2VYcK7bh6/x37y/FWvFzYR5Nj1I4MHgOuTtDFbWvkEERu/pPY3RyzPupWC9ezb7HXjsBayQfLIN3hESE
+        B5cv7idVMrhHcGkS4dI5VkAid/WfDHZN3Ky1R4TPwu9f2GPHkR7OujLYcnGnF9Fgvx5FQ/ayK4M9MFsv
+        EQ3Tc59Qk2l0ZezoO4XZb2XvkggbLlWbkrWujM3dR5z+V0QHn9YdGfwgokUyDEIyDEIyDEIyDMKXwbaK
+        7ZWIDl8GByCaVUSLL4Pv1vlKV0QDH7j54O3IiGfbkRwf9i6JsHn4YRxH7RZXBgccNQON2jciInbvOtry
+        3a4M5szNdvS8KHqXRVg8mXqJw3Zz5XCJM439gwlMlme8r4n1hvOjnZkG/8SIL4PhgGO3dVZvcEOAIuoK
+        regopP36V8hgkoV+51CCNXHf+5lYa55Nv3HuiMUimCoZDJesWO6KY447vcax/w9HFDx/xnNotfaFwMNs
+        gTL+hubYcm1J1TsPJcrqw5kRT2byhGZQrZllZSjhRjIMimQYFMkwKJJhTEr4AxU4GGUSzM//AAAAAElF
+        TkSuQmCC
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA8MAAAIYCAYAAABJ+z5uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

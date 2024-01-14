@@ -20,7 +20,7 @@ namespace medical_app
 
             private void paiement_Load(object sender, EventArgs e)
             {
-                Donne d = new Donne();
+                BaseClass d = new BaseClass();
                 d.RemplirGrid(" facture ", dgvpaiment);
             }
 
@@ -36,5 +36,44 @@ namespace medical_app
             acceuil.Show();
             this.Hide();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            BaseClass d = new BaseClass();
+            d.connecter();
+            d.cmd.Connection = d.Con;
+            try
+            {
+                d.cmd.CommandText = "INSERT INTO facture (Num_facture, date_paiment, montant, type_medicament, id_patient) VALUES (@param1, @param2, @param3, @param4, @param5)";
+                d.cmd.Parameters.AddWithValue("@param1", int.Parse(textBox1.Text));
+                d.cmd.Parameters.AddWithValue("@param2", DateTime.Parse(textBox7.Text));
+                d.cmd.Parameters.AddWithValue("@param3", decimal.TryParse(textBox3.Text, out decimal montantxt));
+                d.cmd.Parameters.AddWithValue("@param4", textBox6.Text);
+                d.cmd.Parameters.AddWithValue("@param5", int.Parse(textBox2.Text));
+                d.cmd.ExecuteNonQuery();
+                MessageBox.Show("Montant valide");
+                d.cmd.Parameters.Clear();
+                d.cmd.CommandText = "SELECT * FROM facture";
+
+                DataTable dataTable = new DataTable();
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(d.cmd))
+                {
+                    adapter.Fill(dataTable);
+                }
+
+                dgvpaiment.DataSource = dataTable;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur s'est produite : " + ex.Message);
+            }
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}

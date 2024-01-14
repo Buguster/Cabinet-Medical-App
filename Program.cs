@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace medical_app
 {
@@ -16,7 +14,7 @@ namespace medical_app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Ordonance());
+            Application.Run(new RDV());
         }
     }
 }

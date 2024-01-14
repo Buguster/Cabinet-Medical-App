@@ -2,13 +2,14 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace medical_app
 {
     public partial class Login : Form
     {
+        BaseClass db = new BaseClass();
 
-        SqlConnection conn = new SqlConnection(@"Data Source=SOLAB\SQLEXPRESS;Initial Catalog=testing;");
         public Login()
         {
             InitializeComponent();
@@ -24,43 +25,132 @@ namespace medical_app
 
         }
 
-        private void login_button_Click_1(object sender, EventArgs e)
+        private void choice_login_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public void secretary_login(object sender, EventArgs e)
+        {
             try
             {
-                string username = txt_Nom_utilisateur.Text;
-                string password = txt_passwd.Text;
-
-
-                if (string.Equals(username, "Admin", StringComparison.OrdinalIgnoreCase) &&
-     string.Equals(password, "12345678", StringComparison.Ordinal))
+                using (SqlConnection connection = new SqlConnection(db.Con.ConnectionString))
                 {
-                    Home home = new Home();
-                    home.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("informations erronés");
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("sp_type_login", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@uname", txt_Nom_utilisateur.Text);
+                        command.Parameters.AddWithValue("@upass", txt_passwd.Text);
+
+                        using (SqlDataReader myrd = command.ExecuteReader())
+                        {
+                            if (myrd.HasRows)
+                            {
+                                myrd.Read();
+                                if (myrd[3].ToString() == "Sécrétaire")
+                                    BaseClass.type = "S";
+                                Home acceuil = new Home();
+                                acceuil.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error!! Login Secretary");
+                            }
+                        }
+                    }
                 }
             }
-            catch (Exception ex)
+            catch (Exception Ex)
             {
-                MessageBox.Show("Error: " + ex.Message + "\n" + ex.StackTrace);
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
+                MessageBox.Show(Ex.Message);
             }
         }
+
+        private void Acceuil_Load()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void medecin_login(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(db.Con.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("sp_login_medecin", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@uname", txt_Nom_utilisateur.Text);
+                        command.Parameters.AddWithValue("@upass", txt_passwd.Text);
+
+                        using (SqlDataReader myrd = command.ExecuteReader())
+                        {
+                            if (myrd.HasRows)
+                            {
+                                myrd.Read();
+                                if (myrd[6].ToString() == "Médecin")
+                                    BaseClass.type = "M";
+                                Medecin medecin = new Medecin();
+                                medecin.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error!! Login medecin");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(db.Con.ConnectionString))
+                {
+                    connection.Open();
+
+                    if (choice_login.SelectedIndex == 0)
+                    {
+                        medecin_login(sender, e);
+                    }
+                    else if (choice_login.SelectedIndex == 1)
+                    {
+                        secretary_login(sender, e);
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_passwd_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+ }

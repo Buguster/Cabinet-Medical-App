@@ -6,21 +6,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace medical_app
 {
-    internal class Donne
+    internal class BaseClass
     {
-        public SqlConnection Con = new SqlConnection();
+        public SqlConnection Con;
         public SqlCommand cmd = new SqlCommand();
         public SqlDataAdapter da = new SqlDataAdapter();
         public DataSet ds = new DataSet();
+        private static string connectionString = ConfigurationManager.ConnectionStrings["server_me"].ConnectionString;
+
+        public static string type;
+
+
+        public BaseClass()
+        {
+            Con = new SqlConnection(ConfigurationManager.ConnectionStrings["server_me"].ConnectionString);
+        }
 
         public void connecter()
         {
             if (Con.State == ConnectionState.Closed)
             {
-                Con.ConnectionString = @"Data Source=SOLAB\SQLEXPRESS;Initial Catalog=APP_V1;Integrated Security=True;";
+                Con.ConnectionString = connectionString;
                 Con.Open();
             }
 

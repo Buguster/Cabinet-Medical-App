@@ -92,3 +92,27 @@ C:\Users\ouzat\Desktop\Cabinet-Medical-App - Copy\obj\Debug\medical-app.csproj.C
 C:\Users\ouzat\Desktop\Cabinet-Medical-App - Copy\obj\Debug\medical-app.csproj.CopyComplete
 C:\Users\ouzat\Desktop\Cabinet-Medical-App - Copy\obj\Debug\medical-app.exe
 C:\Users\ouzat\Desktop\Cabinet-Medical-App - Copy\obj\Debug\medical-app.pdb
+C:\Users\ouzat\Desktop\Cabinet-Medical-App\obj\Debug\medical_app.paiement.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\bin\Debug\medical-app.exe
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\bin\Debug\medical-app.exe.config
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\bin\Debug\Bunifu.Licensing.dll
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\bin\Debug\Bunifu.UI.WinForms.dll
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\bin\Debug\Guna.UI2.dll
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical-app.csproj.AssemblyReference.cache
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.Acceuil.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.Home.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.Login.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.Medecin.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.Ordonance.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.paiement.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.Patient.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.Properties.Resources.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical-app.csproj.GenerateResource.cache
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical-app.csproj.CoreCompileInputs.cache
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical-app.csproj.CopyComplete
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical-app.exe
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical-app.pdb
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\bin\Debug\medical-app.pdb
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.RDV.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.Stagiaire.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.FichePatient.resources
