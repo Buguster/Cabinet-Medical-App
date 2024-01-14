@@ -41,12 +41,13 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvpaiment = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.retour = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpaiment)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -64,7 +65,7 @@
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel2.Location = new System.Drawing.Point(211, 168);
+            this.panel2.Location = new System.Drawing.Point(18, 61);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(799, 136);
             this.panel2.TabIndex = 7;
@@ -74,7 +75,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(12, -2);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 24);
             this.label1.TabIndex = 12;
@@ -85,7 +86,7 @@
             this.labetype_medicament.AutoSize = true;
             this.labetype_medicament.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labetype_medicament.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labetype_medicament.Location = new System.Drawing.Point(484, 34);
+            this.labetype_medicament.Location = new System.Drawing.Point(484, 57);
             this.labetype_medicament.Name = "labetype_medicament";
             this.labetype_medicament.Size = new System.Drawing.Size(150, 18);
             this.labetype_medicament.TabIndex = 11;
@@ -118,7 +119,7 @@
             this.labdate_paiment.AutoSize = true;
             this.labdate_paiment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labdate_paiment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labdate_paiment.Location = new System.Drawing.Point(12, 78);
+            this.labdate_paiment.Location = new System.Drawing.Point(3, 75);
             this.labdate_paiment.Name = "labdate_paiment";
             this.labdate_paiment.Size = new System.Drawing.Size(109, 18);
             this.labdate_paiment.TabIndex = 8;
@@ -138,7 +139,7 @@
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(127, 75);
+            this.textBox7.Location = new System.Drawing.Point(118, 75);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(125, 24);
             this.textBox7.TabIndex = 6;
@@ -148,8 +149,9 @@
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(640, 31);
+            this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 24);
+            this.textBox6.Size = new System.Drawing.Size(125, 71);
             this.textBox6.TabIndex = 5;
             // 
             // textBox3
@@ -179,19 +181,10 @@
             // dgvpaiment
             // 
             this.dgvpaiment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvpaiment.Location = new System.Drawing.Point(251, 359);
+            this.dgvpaiment.Location = new System.Drawing.Point(18, 233);
             this.dgvpaiment.Name = "dgvpaiment";
-            this.dgvpaiment.Size = new System.Drawing.Size(795, 166);
+            this.dgvpaiment.Size = new System.Drawing.Size(795, 271);
             this.dgvpaiment.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel1.Location = new System.Drawing.Point(305, 565);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(741, 103);
-            this.panel1.TabIndex = 5;
             // 
             // button1
             // 
@@ -200,7 +193,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DimGray;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button1.Location = new System.Drawing.Point(302, 23);
+            this.button1.Location = new System.Drawing.Point(312, 533);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 39);
             this.button1.TabIndex = 0;
@@ -212,7 +205,7 @@
             // 
             this.retour.BackColor = System.Drawing.Color.AliceBlue;
             this.retour.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.retour.Location = new System.Drawing.Point(12, 24);
+            this.retour.Location = new System.Drawing.Point(102, 12);
             this.retour.Name = "retour";
             this.retour.Size = new System.Drawing.Size(137, 37);
             this.retour.TabIndex = 10;
@@ -220,16 +213,38 @@
             this.retour.UseVisualStyleBackColor = false;
             this.retour.Click += new System.EventHandler(this.retour_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.dgvpaiment);
+            this.panel3.Location = new System.Drawing.Point(102, 58);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(833, 630);
+            this.panel3.TabIndex = 11;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DimGray;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(716, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(219, 37);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Liste Des Paiements";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // paiement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1079, 700);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.retour);
-            this.Controls.Add(this.dgvpaiment);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "paiement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -238,7 +253,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpaiment)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,8 +273,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dgvpaiment;
-        private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button retour;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button2;
     }
 }

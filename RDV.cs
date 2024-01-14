@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace medical_app
 {
@@ -94,57 +95,219 @@ namespace medical_app
         }
         private void select_rdv_based_times(object sender, EventArgs e)
         {
+
+        }
+        private void filter_today_RDV(object sender, EventArgs e)
+        {
+            using (SqlConnection myconn = new SqlConnection(server_name))
+            {
+                try
+                {
+                    myconn.Open();
+
+                    if (myconn.State == ConnectionState.Open)
+                    {
+                        string query = "SELECT Nom, Prenom, telephone, date FROM Patient AS P " +
+                                       "JOIN RDV AS R " +
+                                       "ON P.id = R.id_patient " +
+                                       "WHERE date = @aujourd_hui";
+
+                        SqlCommand command = new SqlCommand(query, myconn);
+
+                        command.Parameters.AddWithValue("@aujourd_hui", DateTime.Today);
+
+                        using (SqlDataReader data = command.ExecuteReader())
+                        {
+                            if (data.HasRows)
+                            {
+                                Grid_Filter_RDV.Rows.Clear();
+                                while (data.Read())
+                                {
+                                    Grid_Filter_RDV.Rows.Add(data["Nom"], data["Prenom"], data["telephone"], data["date"]);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aucun Rendez Vous");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("n'est pas connecté");
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        private void Filter_Last_Week(object sender, EventArgs e)
+        {
+            using (SqlConnection myconn = new SqlConnection(server_name))
+            {
+                try
+                {
+                    myconn.Open();
+
+                    if (myconn.State == ConnectionState.Open)
+                    {
+                        string query = "SELECT Nom, Prenom, telephone, date FROM Patient AS P " +
+                                       "JOIN RDV AS R " +
+                                       "ON P.id = R.id_patient " +
+                                       "WHERE date = @Semaine_Dernière";
+
+                        SqlCommand command = new SqlCommand(query, myconn);
+
+                        DateTime aujourd_hui = DateTime.Today;
+                        DateTime Semaine_Dernière = aujourd_hui.AddDays(-7);
+                        command.Parameters.AddWithValue("@Semaine_Dernière", Semaine_Dernière);
+
+                        using (SqlDataReader data = command.ExecuteReader())
+                        {
+                            if (data.HasRows)
+                            {
+                                Grid_Filter_RDV.Rows.Clear();
+                                while (data.Read())
+                                {
+                                    Grid_Filter_RDV.Rows.Add(data["Nom"], data["Prenom"], data["telephone"], data["date"]);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aucun Rendez Vous");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("n'est pas connecté");
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        private void Filter_Next_Week(object sender, EventArgs e)
+        {
+            using (SqlConnection myconn = new SqlConnection(server_name))
+            {
+                try
+                {
+                    myconn.Open();
+
+                    if (myconn.State == ConnectionState.Open)
+                    {
+                        string query = "SELECT Nom, Prenom, telephone, date FROM Patient AS P " +
+                                       "JOIN RDV AS R " +
+                                       "ON P.id = R.id_patient " +
+                                       "WHERE date = @Semaine_Prochaine";
+
+                        SqlCommand command = new SqlCommand(query, myconn);
+
+                        DateTime aujourd_hui = DateTime.Today;
+                        DateTime Semaine_Prochaine = aujourd_hui.AddDays(7);
+
+                        command.Parameters.AddWithValue("@Semaine_Prochaine", Semaine_Prochaine);
+
+                        using (SqlDataReader data = command.ExecuteReader())
+                        {
+                            if (data.HasRows)
+                            {
+                                Grid_Filter_RDV.Rows.Clear();
+                                while (data.Read())
+                                {
+                                    Grid_Filter_RDV.Rows.Add(data["Nom"], data["Prenom"], data["telephone"], data["date"]);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aucun Rendez Vous");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("n'est pas connecté");
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        private void Filter_Hier_RDV(object sender, EventArgs e)
+        {
+            using (SqlConnection myconn = new SqlConnection(server_name))
+            {
+                try
+                {
+                    myconn.Open();
+
+                    if (myconn.State == ConnectionState.Open)
+                    {
+                        string query = "SELECT Nom, Prenom, telephone, date FROM Patient AS P " +
+                                       "JOIN RDV AS R " +
+                                       "ON P.id = R.id_patient " +
+                                       "WHERE date = @Hier";
+
+                        SqlCommand command = new SqlCommand(query, myconn);
+
+                        DateTime aujourd_hui = DateTime.Today;
+                        DateTime Hier = aujourd_hui.AddDays(-1);
+
+                        command.Parameters.AddWithValue("@Hier", Hier);
+
+                        using (SqlDataReader data = command.ExecuteReader())
+                        {
+                            if (data.HasRows)
+                            {
+                                Grid_Filter_RDV.Rows.Clear();
+                                while (data.Read())
+                                {
+                                    Grid_Filter_RDV.Rows.Add(data["Nom"], data["Prenom"], data["telephone"], data["date"]);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aucun Rendez Vous");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("n'est pas connecté");
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void confirmer_Click(object sender, EventArgs e)
         {
             if (selected_time.SelectedIndex == 0)
             {
-                using (SqlConnection myconn = new SqlConnection(server_name))
-                {
-                    try
-                    {
-                        myconn.Open();
-
-                        if (myconn.State == ConnectionState.Open)
-                        {
-                            string query = "SELECT Nom, Prenom, telephone, date FROM Patient AS P " +
-                                           "JOIN RDV AS R " +
-                                           "ON P.id = R.id_patient " +
-                                           "WHERE date = @aujourd_hui";
-
-                            SqlCommand command = new SqlCommand(query, myconn);
-
-                            command.Parameters.AddWithValue("@aujourd_hui", DateTime.Today);
-
-                            using (SqlDataReader data = command.ExecuteReader())
-                            {
-                                if (data.HasRows)
-                                {
-                                    Grid_Filter_RDV.Rows.Clear();
-                                    while (data.Read())
-                                    {
-                                        Grid_Filter_RDV.Rows.Add(data["Nom"], data["Prenom"], data["telephone"], data["date"]);
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("No data for the current date");
-                                }
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Not connected");
-                        }
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
+                filter_today_RDV(sender, e);
             }
-
+            if (selected_time.SelectedIndex == 1)
+            {
+                Filter_Hier_RDV(sender, e);
+            }
+            if (selected_time.SelectedIndex == 2)
+            {
+                Filter_Last_Week(sender, e);
+            }
+            if (selected_time.SelectedIndex == 3)
+            {
+                Filter_Next_Week(sender, e);
+            }
         }
 
         private void Grid_Filter_RDV_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -278,6 +441,13 @@ namespace medical_app
         private void patient_ID_OnValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void retour_Click(object sender, EventArgs e)
+        {
+            Acceuil acceuil = new Acceuil();
+            acceuil.Show();
+            this.Hide();
         }
     }
 }

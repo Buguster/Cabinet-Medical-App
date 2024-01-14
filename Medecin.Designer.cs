@@ -61,13 +61,13 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Navy;
+            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel3.Controls.Add(this.patient);
             this.panel3.Controls.Add(this.ordonnace);
             this.panel3.Controls.Add(this.stagiare);
-            this.panel3.Location = new System.Drawing.Point(3, 102);
+            this.panel3.Location = new System.Drawing.Point(12, 102);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(170, 590);
+            this.panel3.Size = new System.Drawing.Size(170, 324);
             this.panel3.TabIndex = 31;
             // 
             // patient
@@ -77,7 +77,7 @@
             this.patient.ActiveFillColor = System.Drawing.Color.Salmon;
             this.patient.ActiveForecolor = System.Drawing.Color.White;
             this.patient.ActiveLineColor = System.Drawing.Color.Navy;
-            this.patient.BackColor = System.Drawing.Color.Navy;
+            this.patient.BackColor = System.Drawing.Color.LightSteelBlue;
             this.patient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("patient.BackgroundImage")));
             this.patient.ButtonText = "Patients";
             this.patient.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -87,8 +87,8 @@
             this.patient.IdleCornerRadius = 20;
             this.patient.IdleFillColor = System.Drawing.Color.White;
             this.patient.IdleForecolor = System.Drawing.Color.Navy;
-            this.patient.IdleLineColor = System.Drawing.Color.Navy;
-            this.patient.Location = new System.Drawing.Point(11, 106);
+            this.patient.IdleLineColor = System.Drawing.Color.LightSteelBlue;
+            this.patient.Location = new System.Drawing.Point(48, 45);
             this.patient.Margin = new System.Windows.Forms.Padding(5);
             this.patient.Name = "patient";
             this.patient.Size = new System.Drawing.Size(117, 44);
@@ -103,7 +103,7 @@
             this.ordonnace.ActiveFillColor = System.Drawing.Color.Salmon;
             this.ordonnace.ActiveForecolor = System.Drawing.Color.White;
             this.ordonnace.ActiveLineColor = System.Drawing.Color.Navy;
-            this.ordonnace.BackColor = System.Drawing.Color.Navy;
+            this.ordonnace.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ordonnace.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ordonnace.BackgroundImage")));
             this.ordonnace.ButtonText = "Ordonnance";
             this.ordonnace.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -113,8 +113,8 @@
             this.ordonnace.IdleCornerRadius = 20;
             this.ordonnace.IdleFillColor = System.Drawing.Color.White;
             this.ordonnace.IdleForecolor = System.Drawing.Color.Navy;
-            this.ordonnace.IdleLineColor = System.Drawing.Color.Navy;
-            this.ordonnace.Location = new System.Drawing.Point(11, 230);
+            this.ordonnace.IdleLineColor = System.Drawing.Color.LightSteelBlue;
+            this.ordonnace.Location = new System.Drawing.Point(48, 148);
             this.ordonnace.Margin = new System.Windows.Forms.Padding(5);
             this.ordonnace.Name = "ordonnace";
             this.ordonnace.Size = new System.Drawing.Size(117, 38);
@@ -129,7 +129,7 @@
             this.stagiare.ActiveFillColor = System.Drawing.Color.Salmon;
             this.stagiare.ActiveForecolor = System.Drawing.Color.White;
             this.stagiare.ActiveLineColor = System.Drawing.Color.Navy;
-            this.stagiare.BackColor = System.Drawing.Color.Navy;
+            this.stagiare.BackColor = System.Drawing.Color.LightSteelBlue;
             this.stagiare.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("stagiare.BackgroundImage")));
             this.stagiare.ButtonText = "Stagiares";
             this.stagiare.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -139,8 +139,8 @@
             this.stagiare.IdleCornerRadius = 20;
             this.stagiare.IdleFillColor = System.Drawing.Color.White;
             this.stagiare.IdleForecolor = System.Drawing.Color.Navy;
-            this.stagiare.IdleLineColor = System.Drawing.Color.Navy;
-            this.stagiare.Location = new System.Drawing.Point(11, 172);
+            this.stagiare.IdleLineColor = System.Drawing.Color.LightSteelBlue;
+            this.stagiare.Location = new System.Drawing.Point(48, 99);
             this.stagiare.Margin = new System.Windows.Forms.Padding(5);
             this.stagiare.Name = "stagiare";
             this.stagiare.Size = new System.Drawing.Size(117, 39);

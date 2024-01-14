@@ -95,8 +95,8 @@ namespace medical_app
                                 myrd.Read();
                                 if (myrd[6].ToString() == "Médecin")
                                     BaseClass.type = "M";
-                                Medecin medecin = new Medecin();
-                                medecin.Show();
+                                MedecinAcceuil acceuil = new MedecinAcceuil();
+                                acceuil.Show();
                                 this.Hide();
                             }
                             else

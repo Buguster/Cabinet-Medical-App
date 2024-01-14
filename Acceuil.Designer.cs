@@ -106,7 +106,7 @@
             // 
             this.stagiare.ActiveBorderThickness = 1;
             this.stagiare.ActiveCornerRadius = 20;
-            this.stagiare.ActiveFillColor = System.Drawing.Color.Salmon;
+            this.stagiare.ActiveFillColor = System.Drawing.Color.Navy;
             this.stagiare.ActiveForecolor = System.Drawing.Color.White;
             this.stagiare.ActiveLineColor = System.Drawing.Color.Navy;
             this.stagiare.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -132,7 +132,7 @@
             // 
             this.Rendez_vous.ActiveBorderThickness = 1;
             this.Rendez_vous.ActiveCornerRadius = 20;
-            this.Rendez_vous.ActiveFillColor = System.Drawing.Color.Salmon;
+            this.Rendez_vous.ActiveFillColor = System.Drawing.Color.Navy;
             this.Rendez_vous.ActiveForecolor = System.Drawing.Color.White;
             this.Rendez_vous.ActiveLineColor = System.Drawing.Color.Navy;
             this.Rendez_vous.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -158,7 +158,7 @@
             // 
             this.patient.ActiveBorderThickness = 1;
             this.patient.ActiveCornerRadius = 20;
-            this.patient.ActiveFillColor = System.Drawing.Color.Salmon;
+            this.patient.ActiveFillColor = System.Drawing.Color.Navy;
             this.patient.ActiveForecolor = System.Drawing.Color.White;
             this.patient.ActiveLineColor = System.Drawing.Color.Navy;
             this.patient.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -184,7 +184,7 @@
             // 
             this.ordonnace.ActiveBorderThickness = 1;
             this.ordonnace.ActiveCornerRadius = 20;
-            this.ordonnace.ActiveFillColor = System.Drawing.Color.Salmon;
+            this.ordonnace.ActiveFillColor = System.Drawing.Color.Navy;
             this.ordonnace.ActiveForecolor = System.Drawing.Color.White;
             this.ordonnace.ActiveLineColor = System.Drawing.Color.Navy;
             this.ordonnace.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -210,7 +210,7 @@
             // 
             this.paiement.ActiveBorderThickness = 1;
             this.paiement.ActiveCornerRadius = 20;
-            this.paiement.ActiveFillColor = System.Drawing.Color.Salmon;
+            this.paiement.ActiveFillColor = System.Drawing.Color.Navy;
             this.paiement.ActiveForecolor = System.Drawing.Color.White;
             this.paiement.ActiveLineColor = System.Drawing.Color.Navy;
             this.paiement.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -238,7 +238,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 251);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 237);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;

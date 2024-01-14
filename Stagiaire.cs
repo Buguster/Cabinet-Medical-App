@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -14,6 +15,8 @@ namespace medical_app
 {
     public partial class Stagiaire : Form
     {
+        private string server_name = ConfigurationManager.ConnectionStrings["server_me"].ConnectionString;
+        
         public Stagiaire()
         {
             InitializeComponent();
@@ -23,12 +26,19 @@ namespace medical_app
         {
             BaseClass G = new BaseClass();
             G.RemplirGrid(" stagiaire ", dgvstagiaire);
+
+
+            // style 
+            dgvstagiaire.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            dgvstagiaire.DefaultCellStyle.Font = new Font("Arial", 12);
+            dgvstagiaire.DefaultCellStyle.BackColor = Color.LightGray;
+            dgvstagiaire.DefaultCellStyle.ForeColor = Color.Blue;
+            dgvstagiaire.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            dgvstagiaire.DefaultCellStyle.SelectionForeColor = Color.Red;
         }
 
         private void BTRNOUVEAU_Click(object sender, EventArgs e)
         {
-            // Vider les TextBox
-            textBox6ids.Text = "";
             textnm.Text = "";
             textpre.Text = "";
             textspe.Text = "";
@@ -51,118 +61,48 @@ namespace medical_app
 
         private void butnmodifier_Click(object sender, EventArgs e)
         {
-            tabCstagiaire.SelectedTab = tabPmiseajour;
-            // Assurez-vous qu'il y a au moins une ligne sélectionnée
-            if (dgvstagiaire.SelectedRows.Count > 0)
-            {
-                // Accédez à la ligne sélectionnée
-                DataGridViewRow selectedRow = dgvstagiaire.SelectedRows[0];
 
-                // Vérifiez si la ligne n'est pas nulle
-                if (selectedRow != null)
-                {
-                    // Obtenez les valeurs des huit cellules et affectez-les aux TextBox correspondants
-                    textBox6ids.Text = selectedRow.Cells[0].Value?.ToString() ?? "";
-                    // Répétez ce processus pour les sept autres cellules
-                    textnm.Text = selectedRow.Cells[1].Value?.ToString() ?? "";
-                    textpre.Text = selectedRow.Cells[2].Value?.ToString() ?? "";
-                    textspe.Text = selectedRow.Cells[3].Value?.ToString() ?? "";
-                    textBox3tacher.Text = selectedRow.Cells[4].Value?.ToString() ?? "";
-                    tbxdeb.Text = selectedRow.Cells[5].Value?.ToString() ?? "";
-                    tbxfin.Text = selectedRow.Cells[6].Value?.ToString() ?? "";
-                    textIDMR.Text = selectedRow.Cells[7].Value?.ToString() ?? "";
-                }
-                else
-                {
-                    // Gérez le cas où la ligne sélectionnée est nulle
-                    MessageBox.Show("La ligne sélectionnée est nulle.");
-                }
-            }
-            else
-            {
-                // Gérez le cas où aucune ligne n'est sélectionnée
-                MessageBox.Show("Aucune ligne sélectionnée.");
-            }
         }
 
         private void BTNMODIFIER_Click(object sender, EventArgs e)
         {
-            try
-            {
-                BaseClass G = new BaseClass();
-                G.connecter();
-                G.cmd.Connection = G.Con;
-
-                int stagiaireID = Convert.ToInt32(dgvstagiaire.CurrentRow.Cells["Stagiaire_ID"].Value);
-                string nouveauNom = textnm.Text;
-                string nouveauPrenom = textpre.Text;
-                string nouvelleSpecialite = textspe.Text;
-                string nouvellesTaches = textBox3tacher.Text; // Correction du nom de la TextBox pour les tâches
-                DateTime nouvelleDateDebut = DateTime.Parse(tbxdeb.Text);
-                DateTime nouvelleDateFin = DateTime.Parse(tbxfin.Text);
-                int nouveauIdMedecin = 1;
-
-                G.cmd.CommandText = "UPDATE Stagiaire SET Nom_Stagiaire = @Nom, Prenom_Stagiaire = @Prenom, Spécialité_Etude = @Specialite, Tâches = @Taches, date_debut = @DateDebut, date_fin = @DateFin, id_Medecin = @IdMedecin WHERE Stagiaire_ID = @StagiaireID";
-
-                G.cmd.Parameters.AddWithValue("@StagiaireID", stagiaireID);
-                G.cmd.Parameters.AddWithValue("@Nom", nouveauNom);
-                G.cmd.Parameters.AddWithValue("@Prenom", nouveauPrenom);
-                G.cmd.Parameters.AddWithValue("@Specialite", nouvelleSpecialite);
-                G.cmd.Parameters.AddWithValue("@Taches", nouvellesTaches);
-                G.cmd.Parameters.AddWithValue("@DateDebut", nouvelleDateDebut);
-                G.cmd.Parameters.AddWithValue("@DateFin", nouvelleDateFin);
-                G.cmd.Parameters.AddWithValue("@IdMedecin", nouveauIdMedecin);
-
-                G.cmd.ExecuteNonQuery();
-
-                // Mettre à jour la ligne dans la base de données
-
-                // Recharger les données dans le DataGridView
-                // Assurez-vous que vous avez une méthode ChargerDonnees() pour mettre à jour votre DataGridView
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Une erreur s'est produite : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+          
         }
 
         private void BTNSUPPRIMER_Click(object sender, EventArgs e)
         {
-
-            try
-            {
-                BaseClass G = new BaseClass();
-                G.connecter();
-                G.cmd.Connection = G.Con;
-
-                int stagiaireID = Convert.ToInt32(dgvstagiaire.CurrentRow.Cells["Stagiaire_ID"].Value);
-
-                G.cmd.CommandText = "DELETE FROM Stagiaire WHERE Stagiaire_ID = @StagiaireID";
-
-                G.cmd.Parameters.AddWithValue("@StagiaireID", stagiaireID);
-
-                G.cmd.ExecuteNonQuery();
-
-                // Supprimer la ligne du DataGridView
-                dgvstagiaire.Rows.Remove(dgvstagiaire.CurrentRow);
-
-                MessageBox.Show("La ligne a été supprimée avec succès.", "Suppression réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Une erreur s'est produite : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
 
         private void BTNQUITTER_Click(object sender, EventArgs e)
         {
-            tabCstagiaire.SelectedTab = tabPrecherche;
+
 
 
         }
         private void btnnoveau_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void butnrechercher_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvstagiaire_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void butnquitter_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnnoveau_Click_1(object sender, EventArgs e)
         {
             BaseClass d = new BaseClass();
             d.connecter();
@@ -170,7 +110,9 @@ namespace medical_app
 
             try
             {
-                d.cmd.CommandText = "INSERT INTO stagiaire (Nom_Stagiaire, Prenom_Stagiaire, Spécialité_Etude, Tâches, date_debut, date_fin, id_Medecin) VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7)";
+                d.cmd.CommandText = "INSERT INTO stagiaire (Nom_Stagiaire, Prenom_Stagiaire, " +
+                    "Spécialité_Etude, Tâches, date_debut, date_fin, id_Medecin) " +
+                    "VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7)";
 
                 d.cmd.Parameters.AddWithValue("@param1", textBoxnm.Text);
                 d.cmd.Parameters.AddWithValue("@param2", textBoxpr.Text);
@@ -184,10 +126,8 @@ namespace medical_app
                 d.cmd.ExecuteNonQuery();
                 MessageBox.Show("Ajout avec succès");
 
-                // Effacer les paramètres après l'exécution de la requête
                 d.cmd.Parameters.Clear();
 
-                // Sélectionner toutes les lignes de la table stagiaire pour mettre à jour le DataGridView
                 d.cmd.CommandText = "SELECT * FROM stagiaire";
 
                 DataTable dataTable = new DataTable();
@@ -205,12 +145,41 @@ namespace medical_app
             }
             finally
             {
-                // Fermer la connexion après l'opération
                 d.Con.Close();
             }
         }
 
-        private void butnrechercher_Click(object sender, EventArgs e)
+        private void butnmodifier_Click_1(object sender, EventArgs e)
+        {
+            tabCstagiaire.SelectedTab = tabPmiseajour;
+            if (dgvstagiaire.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvstagiaire.SelectedRows[0];
+
+                if (selectedRow != null)
+                {
+                    textnm.Text = selectedRow.Cells[1].Value?.ToString() ?? "";
+                    textpre.Text = selectedRow.Cells[2].Value?.ToString() ?? "";
+                    textspe.Text = selectedRow.Cells[3].Value?.ToString() ?? "";
+                    textBox3tacher.Text = selectedRow.Cells[4].Value?.ToString() ?? "";
+                    tbxdeb.Text = selectedRow.Cells[5].Value?.ToString() ?? "";
+                    tbxfin.Text = selectedRow.Cells[6].Value?.ToString() ?? "";
+                    textIDMR.Text = selectedRow.Cells[7].Value?.ToString() ?? "";
+                }
+                else
+                {
+                    MessageBox.Show("La ligne sélectionnée est nulle.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Aucune ligne sélectionnée.");
+            }
+           
+
+        }
+
+        private void butnrechercher_Click_1(object sender, EventArgs e)
         {
             BaseClass d = new BaseClass();
             d.connecter();
@@ -251,17 +220,155 @@ namespace medical_app
             }
         }
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
+        private void ChargerDonnees()
+        {
+            BaseClass G = new BaseClass();
+            G.connecter();
+            G.cmd.Connection = G.Con;
+
+            try
+            {
+                G.cmd.CommandText = "SELECT * FROM Stagiaire";
+                DataTable dataTable = new DataTable();
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(G.cmd))
+                {
+                    adapter.Fill(dataTable);
+                }
+                dgvstagiaire.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur s'est produite lors du chargement des données : " 
+                    + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                G.Con.Close();
+            }
+        }
+
+        private void BTNMODIFIER_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                BaseClass G = new BaseClass();
+                G.connecter();
+                G.cmd.Connection = G.Con;
+
+                int stagiaireID = Convert.ToInt32(dgvstagiaire.CurrentRow.Cells["Stagiaire_ID"].Value);
+                string nouveauNom = textnm.Text;
+                string nouveauPrenom = textpre.Text;
+                string nouvelleSpecialite = textspe.Text;
+                string nouvellesTaches = textBox3tacher.Text; 
+                DateTime nouvelleDateDebut = DateTime.Parse(tbxdeb.Text);
+                DateTime nouvelleDateFin = DateTime.Parse(tbxfin.Text);
+                int nouveauIdMedecin = 1;
+
+                G.cmd.CommandText = "UPDATE Stagiaire SET Nom_Stagiaire = @Nom, Prenom_Stagiaire = @Prenom, " +
+                    "Spécialité_Etude = @Specialite, Tâches = @Taches, date_debut = @DateDebut, date_fin = " +
+                    "@DateFin, id_Medecin = @IdMedecin WHERE Stagiaire_ID = @StagiaireID";
+
+                G.cmd.Parameters.AddWithValue("@StagiaireID", stagiaireID);
+                G.cmd.Parameters.AddWithValue("@Nom", nouveauNom);
+                G.cmd.Parameters.AddWithValue("@Prenom", nouveauPrenom);
+                G.cmd.Parameters.AddWithValue("@Specialite", nouvelleSpecialite);
+                G.cmd.Parameters.AddWithValue("@Taches", nouvellesTaches);
+                G.cmd.Parameters.AddWithValue("@DateDebut", nouvelleDateDebut);
+                G.cmd.Parameters.AddWithValue("@DateFin", nouvelleDateFin);
+                G.cmd.Parameters.AddWithValue("@IdMedecin", nouveauIdMedecin);
+
+                G.cmd.ExecuteNonQuery();
+                G.cmd.Parameters.Clear();
+                dgvstagiaire.Refresh();
+                ChargerDonnees();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur s'est produite : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BTNSUPPRIMER_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                BaseClass G = new BaseClass();
+                G.connecter();
+                G.cmd.Connection = G.Con;
+
+                int stagiaireID = Convert.ToInt32(dgvstagiaire.CurrentRow.Cells["Stagiaire_ID"].Value);
+
+                G.cmd.CommandText = "DELETE FROM Stagiaire WHERE Stagiaire_ID = @StagiaireID";
+
+                G.cmd.Parameters.AddWithValue("@StagiaireID", stagiaireID);
+
+                G.cmd.ExecuteNonQuery();
+
+                dgvstagiaire.Rows.Remove(dgvstagiaire.CurrentRow);
+
+                MessageBox.Show("La ligne a été supprimée avec succès.", "Suppression réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur s'est produite : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BTNQUITTER_Click_1(object sender, EventArgs e)
+        {
+            tabCstagiaire.SelectedTab = tabPrecherche;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection myconn = new SqlConnection(server_name))
+            {
+                try
+                {
+                    myconn.Open();
+
+                    if (myconn.State == ConnectionState.Open)
+                    {
+                        MessageBox.Show("Connected successfully");
+                        string query = "SELECT * FROM Stagiaire ORDER BY Stagiaire_ID";
+                        SqlCommand command = new SqlCommand(query, myconn);
+
+                        using (SqlDataReader data = command.ExecuteReader())
+                        {
+                            if (data.HasRows)
+                            {
+                                dgvstagiaire.Rows.Clear();
+                                while (data.Read())
+                                {
+                                    dgvstagiaire.Rows.Add(data[0], data[1], data[2], data[3], data[4], data[5],
+                                                          data[6], data[7]);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Table est vide");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("n'est pas connecté");
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dgvstagiaire_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void dgvstagiaire_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void butnquitter_Click(object sender, EventArgs e)
+        private void butnquitter_Click_1(object sender, EventArgs e)
         {
             Acceuil acceuil = new Acceuil();
             acceuil.Show();

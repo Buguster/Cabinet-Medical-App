@@ -46,11 +46,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox6ids = new System.Windows.Forms.TextBox();
             this.textBoxpr = new System.Windows.Forms.TextBox();
             this.textIDM = new System.Windows.Forms.TextBox();
             this.textBox3tache = new System.Windows.Forms.TextBox();
@@ -80,6 +78,8 @@
             this.textBox3tacher = new System.Windows.Forms.TextBox();
             this.textspe = new System.Windows.Forms.TextBox();
             this.textnm = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.afficher = new System.Windows.Forms.Button();
             this.tabCstagiaire.SuspendLayout();
             this.tabPrecherche.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -95,7 +95,7 @@
             // 
             this.tabCstagiaire.Controls.Add(this.tabPrecherche);
             this.tabCstagiaire.Controls.Add(this.tabPmiseajour);
-            this.tabCstagiaire.Location = new System.Drawing.Point(1, 39);
+            this.tabCstagiaire.Location = new System.Drawing.Point(58, 45);
             this.tabCstagiaire.Name = "tabCstagiaire";
             this.tabCstagiaire.SelectedIndex = 0;
             this.tabCstagiaire.Size = new System.Drawing.Size(865, 600);
@@ -117,6 +117,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel3.Controls.Add(this.afficher);
+            this.panel3.Controls.Add(this.bunifuCustomLabel1);
             this.panel3.Controls.Add(this.inputsearchsta);
             this.panel3.Controls.Add(this.butnquitter);
             this.panel3.Controls.Add(this.butnrechercher);
@@ -144,6 +146,7 @@
             this.butnquitter.TabIndex = 3;
             this.butnquitter.Text = "Quitter";
             this.butnquitter.UseVisualStyleBackColor = false;
+            this.butnquitter.Click += new System.EventHandler(this.butnquitter_Click_1);
             // 
             // butnrechercher
             // 
@@ -155,28 +158,31 @@
             this.butnrechercher.TabIndex = 2;
             this.butnrechercher.Text = "Rechercher";
             this.butnrechercher.UseVisualStyleBackColor = false;
+            this.butnrechercher.Click += new System.EventHandler(this.butnrechercher_Click_1);
             // 
             // butnmodifier
             // 
             this.butnmodifier.BackColor = System.Drawing.SystemColors.Highlight;
             this.butnmodifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butnmodifier.Location = new System.Drawing.Point(316, 24);
+            this.butnmodifier.Location = new System.Drawing.Point(159, 24);
             this.butnmodifier.Name = "butnmodifier";
-            this.butnmodifier.Size = new System.Drawing.Size(162, 44);
+            this.butnmodifier.Size = new System.Drawing.Size(107, 44);
             this.butnmodifier.TabIndex = 1;
             this.butnmodifier.Text = "Modifier";
             this.butnmodifier.UseVisualStyleBackColor = false;
+            this.butnmodifier.Click += new System.EventHandler(this.butnmodifier_Click_1);
             // 
             // btnnoveau
             // 
             this.btnnoveau.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnnoveau.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnoveau.Location = new System.Drawing.Point(96, 24);
+            this.btnnoveau.Location = new System.Drawing.Point(32, 24);
             this.btnnoveau.Name = "btnnoveau";
-            this.btnnoveau.Size = new System.Drawing.Size(170, 44);
+            this.btnnoveau.Size = new System.Drawing.Size(103, 44);
             this.btnnoveau.TabIndex = 0;
             this.btnnoveau.Text = "Ajouter";
             this.btnnoveau.UseVisualStyleBackColor = false;
+            this.btnnoveau.Click += new System.EventHandler(this.btnnoveau_Click_1);
             // 
             // panel2
             // 
@@ -194,6 +200,7 @@
             this.dgvstagiaire.Name = "dgvstagiaire";
             this.dgvstagiaire.Size = new System.Drawing.Size(859, 192);
             this.dgvstagiaire.TabIndex = 0;
+            this.dgvstagiaire.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvstagiaire_CellContentClick_1);
             // 
             // panel1
             // 
@@ -205,11 +212,9 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox6ids);
             this.panel1.Controls.Add(this.textBoxpr);
             this.panel1.Controls.Add(this.textIDM);
             this.panel1.Controls.Add(this.textBox3tache);
@@ -223,14 +228,14 @@
             // 
             // textBox2fin
             // 
-            this.textBox2fin.Location = new System.Drawing.Point(650, 56);
+            this.textBox2fin.Location = new System.Drawing.Point(471, 54);
             this.textBox2fin.Name = "textBox2fin";
             this.textBox2fin.Size = new System.Drawing.Size(100, 20);
             this.textBox2fin.TabIndex = 0;
             // 
             // textBox1deb
             // 
-            this.textBox1deb.Location = new System.Drawing.Point(450, 58);
+            this.textBox1deb.Location = new System.Drawing.Point(283, 58);
             this.textBox1deb.Name = "textBox1deb";
             this.textBox1deb.Size = new System.Drawing.Size(100, 20);
             this.textBox1deb.TabIndex = 1;
@@ -247,7 +252,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(581, 59);
+            this.label8.Location = new System.Drawing.Point(402, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 15;
@@ -265,7 +270,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(375, 63);
+            this.label6.Location = new System.Drawing.Point(201, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 13);
             this.label6.TabIndex = 13;
@@ -279,15 +284,6 @@
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "Tâche :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(184, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "ID(Stagiaire):";
             // 
             // label3
             // 
@@ -314,13 +310,6 @@
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Nom:";
-            // 
-            // textBox6ids
-            // 
-            this.textBox6ids.Location = new System.Drawing.Point(269, 59);
-            this.textBox6ids.Name = "textBox6ids";
-            this.textBox6ids.Size = new System.Drawing.Size(100, 20);
-            this.textBox6ids.TabIndex = 5;
             // 
             // textBoxpr
             // 
@@ -372,7 +361,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel4.Controls.Add(this.BTNQUITTER);
             this.panel4.Controls.Add(this.BTNSUPPRIMER);
             this.panel4.Controls.Add(this.BTNMODIFIER);
             this.panel4.Controls.Add(this.BTRNOUVEAU);
@@ -384,12 +372,13 @@
             // BTNQUITTER
             // 
             this.BTNQUITTER.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNQUITTER.Location = new System.Drawing.Point(683, 68);
+            this.BTNQUITTER.Location = new System.Drawing.Point(781, 12);
             this.BTNQUITTER.Name = "BTNQUITTER";
             this.BTNQUITTER.Size = new System.Drawing.Size(145, 44);
             this.BTNQUITTER.TabIndex = 3;
-            this.BTNQUITTER.Text = "Quitter";
+            this.BTNQUITTER.Text = "Retour";
             this.BTNQUITTER.UseVisualStyleBackColor = true;
+            this.BTNQUITTER.Click += new System.EventHandler(this.BTNQUITTER_Click_1);
             // 
             // BTNSUPPRIMER
             // 
@@ -401,6 +390,7 @@
             this.BTNSUPPRIMER.TabIndex = 2;
             this.BTNSUPPRIMER.Text = "Supprimer";
             this.BTNSUPPRIMER.UseVisualStyleBackColor = false;
+            this.BTNSUPPRIMER.Click += new System.EventHandler(this.BTNSUPPRIMER_Click_1);
             // 
             // BTNMODIFIER
             // 
@@ -412,6 +402,7 @@
             this.BTNMODIFIER.TabIndex = 1;
             this.BTNMODIFIER.Text = "Modifier";
             this.BTNMODIFIER.UseVisualStyleBackColor = false;
+            this.BTNMODIFIER.Click += new System.EventHandler(this.BTNMODIFIER_Click_1);
             // 
             // BTRNOUVEAU
             // 
@@ -611,13 +602,36 @@
             this.textnm.Size = new System.Drawing.Size(214, 19);
             this.textnm.TabIndex = 0;
             // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(555, 16);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(116, 20);
+            this.bunifuCustomLabel1.TabIndex = 1;
+            this.bunifuCustomLabel1.Text = "Tapez le nom";
+            // 
+            // afficher
+            // 
+            this.afficher.BackColor = System.Drawing.SystemColors.Highlight;
+            this.afficher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.afficher.Location = new System.Drawing.Point(291, 24);
+            this.afficher.Name = "afficher";
+            this.afficher.Size = new System.Drawing.Size(107, 44);
+            this.afficher.TabIndex = 5;
+            this.afficher.Text = "Afficher";
+            this.afficher.UseVisualStyleBackColor = false;
+            this.afficher.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Stagiaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(867, 679);
+            this.ClientSize = new System.Drawing.Size(965, 679);
+            this.Controls.Add(this.BTNQUITTER);
             this.Controls.Add(this.tabCstagiaire);
             this.ForeColor = System.Drawing.Color.Navy;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -660,11 +674,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6ids;
         private System.Windows.Forms.TextBox textBoxpr;
         private System.Windows.Forms.TextBox textIDM;
         private System.Windows.Forms.TextBox textBox3tache;
@@ -694,5 +706,7 @@
         private System.Windows.Forms.TextBox textBox3tacher;
         private System.Windows.Forms.TextBox textspe;
         private System.Windows.Forms.TextBox textnm;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private System.Windows.Forms.Button afficher;
     }
 }

@@ -116,3 +116,4 @@ C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\bin\Debug\medical-app.pdb
 C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.RDV.resources
 C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.Stagiaire.resources
 C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.FichePatient.resources
+C:\Users\ouzat\Desktop\Cabinet-Medical-App Version2\obj\Debug\medical_app.MedecinAcceuil.resources

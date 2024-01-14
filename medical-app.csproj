@@ -97,6 +97,12 @@
     <Compile Include="Medecin.Designer.cs">
       <DependentUpon>Medecin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MedecinAcceuil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedecinAcceuil.Designer.cs">
+      <DependentUpon>MedecinAcceuil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ordonance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     <EmbeddedResource Include="Medecin.resx">
       <DependentUpon>Medecin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MedecinAcceuil.resx">
+      <DependentUpon>MedecinAcceuil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ordonance.resx">
       <DependentUpon>Ordonance.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +195,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Medecin\" />
+    <Folder Include="Secrétaire\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

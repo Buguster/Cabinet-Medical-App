@@ -22,7 +22,16 @@ namespace medical_app
             {
                 BaseClass d = new BaseClass();
                 d.RemplirGrid(" facture ", dgvpaiment);
-            }
+
+
+            // style 
+            dgvpaiment.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            dgvpaiment.DefaultCellStyle.Font = new Font("Arial", 12);
+            dgvpaiment.DefaultCellStyle.BackColor = Color.LightGray;
+            dgvpaiment.DefaultCellStyle.ForeColor = Color.Blue;
+            dgvpaiment.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            dgvpaiment.DefaultCellStyle.SelectionForeColor = Color.Red;
+        }
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,6 +82,35 @@ namespace medical_app
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BaseClass G = new BaseClass();
+            G.connecter();
+            G.cmd.Connection = G.Con;
+
+            try
+            {
+                G.cmd.CommandText = "SELECT * FROM Stagiaire";
+                DataTable dataTable = new DataTable();
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(G.cmd))
+                {
+                    adapter.Fill(dataTable);
+                }
+                dgvpaiment.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur s'est produite lors du chargement des données : "
+                    + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                G.Con.Close();
+            }
 
         }
     }
