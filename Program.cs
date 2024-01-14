@@ -14,7 +14,7 @@ namespace medical_app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Stagiaire());
+            Application.Run(new Login());
         }
     }
 }

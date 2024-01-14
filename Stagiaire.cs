@@ -27,7 +27,6 @@ namespace medical_app
             BaseClass G = new BaseClass();
             G.RemplirGrid(" stagiaire ", dgvstagiaire);
 
-
             // style 
             dgvstagiaire.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
             dgvstagiaire.DefaultCellStyle.Font = new Font("Arial", 12);
@@ -46,60 +45,6 @@ namespace medical_app
             tbxdeb.Text = "";
             tbxfin.Text = "";
             textIDMR.Text = "";
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tabPrecherche_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void butnmodifier_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BTNMODIFIER_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void BTNSUPPRIMER_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void BTNQUITTER_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
-        private void btnnoveau_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void butnrechercher_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dgvstagiaire_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void butnquitter_Click(object sender, EventArgs e)
-        {
         }
 
         private void btnnoveau_Click_1(object sender, EventArgs e)
@@ -318,6 +263,9 @@ namespace medical_app
         private void BTNQUITTER_Click_1(object sender, EventArgs e)
         {
             tabCstagiaire.SelectedTab = tabPrecherche;
+            Medecin med = new Medecin();
+            med.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)

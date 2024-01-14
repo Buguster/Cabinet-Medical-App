@@ -43,11 +43,11 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.BackColor = System.Drawing.Color.RosyBrown;
             this.panel2.Controls.Add(this.login_button);
-            this.panel2.Location = new System.Drawing.Point(0, 389);
+            this.panel2.Location = new System.Drawing.Point(0, 398);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(330, 71);
+            this.panel2.Size = new System.Drawing.Size(330, 62);
             this.panel2.TabIndex = 6;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -58,7 +58,7 @@
             this.login_button.ActiveFillColor = System.Drawing.Color.Navy;
             this.login_button.ActiveForecolor = System.Drawing.Color.LightSteelBlue;
             this.login_button.ActiveLineColor = System.Drawing.Color.Sienna;
-            this.login_button.BackColor = System.Drawing.Color.DarkGray;
+            this.login_button.BackColor = System.Drawing.Color.RosyBrown;
             this.login_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("login_button.BackgroundImage")));
             this.login_button.ButtonText = "Login";
             this.login_button.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -69,7 +69,7 @@
             this.login_button.IdleFillColor = System.Drawing.Color.White;
             this.login_button.IdleForecolor = System.Drawing.Color.Navy;
             this.login_button.IdleLineColor = System.Drawing.Color.Blue;
-            this.login_button.Location = new System.Drawing.Point(115, 5);
+            this.login_button.Location = new System.Drawing.Point(115, 2);
             this.login_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.login_button.Name = "login_button";
             this.login_button.Size = new System.Drawing.Size(99, 55);
@@ -92,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 176);
+            this.label1.Location = new System.Drawing.Point(12, 177);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 24);
             this.label1.TabIndex = 0;
@@ -125,7 +125,7 @@
             this.txt_passwd.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_passwd.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txt_passwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_passwd.isPassword = false;
+            this.txt_passwd.isPassword = true;
             this.txt_passwd.Location = new System.Drawing.Point(148, 241);
             this.txt_passwd.Margin = new System.Windows.Forms.Padding(4);
             this.txt_passwd.Name = "txt_passwd";
@@ -136,11 +136,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.RosyBrown;
+            this.pictureBox1.BackColor = System.Drawing.Color.Azure;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(330, 95);
+            this.pictureBox1.Size = new System.Drawing.Size(330, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -149,11 +149,12 @@
             // choice_login
             // 
             this.choice_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.choice_login.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.choice_login.FormattingEnabled = true;
             this.choice_login.Items.AddRange(new object[] {
             "Médecin",
             "Sécrétaire"});
-            this.choice_login.Location = new System.Drawing.Point(100, 323);
+            this.choice_login.Location = new System.Drawing.Point(100, 337);
             this.choice_login.Name = "choice_login";
             this.choice_login.Size = new System.Drawing.Size(135, 32);
             this.choice_login.TabIndex = 9;

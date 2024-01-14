@@ -52,5 +52,33 @@ namespace medical_app
         {
 
         }
+
+        private void Rendez_vous_Click(object sender, EventArgs e)
+        {
+            RDV rdv = new RDV();
+            rdv.Show();
+            this.Hide();
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            MedecinAcceuil md = new MedecinAcceuil();
+            md.Show();
+            this.Hide();
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            Ordonance ordonance = new Ordonance();
+            ordonance.Show();
+            this.Hide();
+        }
+
+        private void stagiare_Click(object sender, EventArgs e)
+        {
+            Stagiaire stagiaire = new Stagiaire();
+            stagiaire.Show();
+            this.Hide();
+        }
     }
 }

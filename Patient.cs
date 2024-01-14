@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace medical_app
 {
@@ -169,34 +170,53 @@ namespace medical_app
 
         private void btn_supprimer_Click(object sender, EventArgs e)
         {
-            if (position == -1)
+            try
             {
-                MessageBox.Show("veuillez selectioner une ligne");
-                return;
-            }
-
-
-            using (SqlConnection myconn = new SqlConnection(server_name))
-            {
-                DialogResult dialog = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce patient ?", "Confirmation", MessageBoxButtons.YesNo);
-                if (dialog == DialogResult.Yes)
+                if (PatientGrid.SelectedRows.Count > 0)
                 {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = myconn;
-                    cmd.CommandText = ("DELETE FROM Patient WHERE id = @id");
-                    cmd.Parameters.AddWithValue("@id", id);
+                    DataGridViewRow selectedRow = PatientGrid.SelectedRows[0];
 
-                    myconn.Open();
-                    cmd.ExecuteNonQuery();
+                    if (selectedRow != null)
+                    {
+                        inputPrenom.Text = selectedRow.Cells[1].Value?.ToString() ?? "";
+                        inputPrenom.Text = selectedRow.Cells[2].Value?.ToString() ?? "";
+                        inputVille.Text = selectedRow.Cells[3].Value?.ToString() ?? "";
+                        dateTimePickerDateCreated.Text = selectedRow.Cells[4].Value?.ToString() ?? "";
+                        dateTimePickerDateNaiss.Text = selectedRow.Cells[5].Value?.ToString() ?? "";
+                        inputSexe.Text = selectedRow.Cells[6].Value?.ToString() ?? "";
+                        inputEtat.Text = selectedRow.Cells[7].Value?.ToString() ?? "";
+                        inputSymptome.Text = selectedRow.Cells[7].Value?.ToString() ?? "";
+                        
+                        ////
+                        BaseClass G = new BaseClass();
+                        G.connecter();
+                        G.cmd.Connection = G.Con;
 
-                    this.PatientGrid.Rows.RemoveAt(position);
-                    MessageBox.Show("patient bien supprimé");
-                    myconn.Close();
+                        int PatientID = Convert.ToInt32(PatientGrid.CurrentRow.Cells["Id_Patient"].Value);
+
+                        G.cmd.CommandText = "DELETE FROM Patient WHERE id = @PatientID";
+
+                        G.cmd.Parameters.AddWithValue("@PatientID", PatientID);
+
+                        G.cmd.ExecuteNonQuery();
+
+                        PatientGrid.Rows.Remove(PatientGrid.CurrentRow);
+
+                        MessageBox.Show("Patient supprimé");
+                    }
+                    else
+                    {
+                        MessageBox.Show("La ligne sélectionnée est nulle.");
+                    }
                 }
                 else
                 {
-                    return;
+                    MessageBox.Show("Aucune ligne sélectionnée.");
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur est produit");
             }
         }
 
@@ -272,6 +292,11 @@ namespace medical_app
             {
                 MessageBox.Show("veuillez saisir tous les champs!!");
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void inputsearchname_OnValueChanged(object sender, EventArgs e)

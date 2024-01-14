@@ -52,11 +52,9 @@
             this.ajouter = new System.Windows.Forms.Button();
             this.btn_supprimer = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
-            this.bunifuMaterialTextbox8 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.inputSymptome = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -180,11 +178,9 @@
             this.panel1.Controls.Add(this.ajouter);
             this.panel1.Controls.Add(this.btn_supprimer);
             this.panel1.Controls.Add(this.title);
-            this.panel1.Controls.Add(this.bunifuMaterialTextbox8);
             this.panel1.Controls.Add(this.inputSymptome);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -200,6 +196,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(877, 484);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // rénitialiser
             // 
@@ -334,31 +331,11 @@
             this.title.TabIndex = 34;
             this.title.Text = "Formulaire Informations Patient";
             // 
-            // bunifuMaterialTextbox8
-            // 
-            this.bunifuMaterialTextbox8.AccessibleName = "inputtype_assurance";
-            this.bunifuMaterialTextbox8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox8.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox8.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox8.HintText = "";
-            this.bunifuMaterialTextbox8.isPassword = false;
-            this.bunifuMaterialTextbox8.LineFocusedColor = System.Drawing.Color.Blue;
-            this.bunifuMaterialTextbox8.LineIdleColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox8.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.bunifuMaterialTextbox8.LineThickness = 3;
-            this.bunifuMaterialTextbox8.Location = new System.Drawing.Point(574, 93);
-            this.bunifuMaterialTextbox8.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox8.Name = "bunifuMaterialTextbox8";
-            this.bunifuMaterialTextbox8.Size = new System.Drawing.Size(177, 42);
-            this.bunifuMaterialTextbox8.TabIndex = 6;
-            this.bunifuMaterialTextbox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // inputSymptome
             // 
             this.inputSymptome.AccessibleName = "inputSymptomes";
             this.inputSymptome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputSymptome.Location = new System.Drawing.Point(415, 238);
+            this.inputSymptome.Location = new System.Drawing.Point(408, 152);
             this.inputSymptome.Multiline = true;
             this.inputSymptome.Name = "inputSymptome";
             this.inputSymptome.Size = new System.Drawing.Size(336, 129);
@@ -384,21 +361,11 @@
             this.label9.TabIndex = 29;
             this.label9.Text = "Etat";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(383, 111);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(162, 24);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Type Assurance";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(383, 195);
+            this.label7.Location = new System.Drawing.Point(376, 109);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 24);
             this.label7.TabIndex = 27;
@@ -675,11 +642,9 @@
         private Bunifu.Framework.UI.BunifuDatepicker dateTimePickerDateNaiss;
         private System.Windows.Forms.Label label11;
         private Bunifu.Framework.UI.BunifuMaterialTextbox inputTel;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox8;
         private System.Windows.Forms.TextBox inputSymptome;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

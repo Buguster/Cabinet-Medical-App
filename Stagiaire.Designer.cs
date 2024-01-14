@@ -31,6 +31,8 @@
             this.tabCstagiaire = new System.Windows.Forms.TabControl();
             this.tabPrecherche = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.afficher = new System.Windows.Forms.Button();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.inputsearchsta = new System.Windows.Forms.TextBox();
             this.butnquitter = new System.Windows.Forms.Button();
             this.butnrechercher = new System.Windows.Forms.Button();
@@ -56,7 +58,6 @@
             this.textBoxnm = new System.Windows.Forms.TextBox();
             this.tabPmiseajour = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.BTNQUITTER = new System.Windows.Forms.Button();
             this.BTNSUPPRIMER = new System.Windows.Forms.Button();
             this.BTNMODIFIER = new System.Windows.Forms.Button();
             this.BTRNOUVEAU = new System.Windows.Forms.Button();
@@ -78,8 +79,7 @@
             this.textBox3tacher = new System.Windows.Forms.TextBox();
             this.textspe = new System.Windows.Forms.TextBox();
             this.textnm = new System.Windows.Forms.TextBox();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.afficher = new System.Windows.Forms.Button();
+            this.BTNQUITTER = new System.Windows.Forms.Button();
             this.tabCstagiaire.SuspendLayout();
             this.tabPrecherche.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -129,6 +129,28 @@
             this.panel3.Size = new System.Drawing.Size(856, 160);
             this.panel3.TabIndex = 3;
             // 
+            // afficher
+            // 
+            this.afficher.BackColor = System.Drawing.SystemColors.Highlight;
+            this.afficher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.afficher.Location = new System.Drawing.Point(291, 24);
+            this.afficher.Name = "afficher";
+            this.afficher.Size = new System.Drawing.Size(107, 44);
+            this.afficher.TabIndex = 5;
+            this.afficher.Text = "Afficher";
+            this.afficher.UseVisualStyleBackColor = false;
+            this.afficher.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(555, 16);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(116, 20);
+            this.bunifuCustomLabel1.TabIndex = 1;
+            this.bunifuCustomLabel1.Text = "Tapez le nom";
+            // 
             // inputsearchsta
             // 
             this.inputsearchsta.Location = new System.Drawing.Point(650, 48);
@@ -140,7 +162,7 @@
             // 
             this.butnquitter.BackColor = System.Drawing.Color.GreenYellow;
             this.butnquitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butnquitter.Location = new System.Drawing.Point(762, 101);
+            this.butnquitter.Location = new System.Drawing.Point(755, 113);
             this.butnquitter.Name = "butnquitter";
             this.butnquitter.Size = new System.Drawing.Size(98, 33);
             this.butnquitter.TabIndex = 3;
@@ -369,17 +391,6 @@
             this.panel4.Size = new System.Drawing.Size(863, 287);
             this.panel4.TabIndex = 3;
             // 
-            // BTNQUITTER
-            // 
-            this.BTNQUITTER.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNQUITTER.Location = new System.Drawing.Point(781, 12);
-            this.BTNQUITTER.Name = "BTNQUITTER";
-            this.BTNQUITTER.Size = new System.Drawing.Size(145, 44);
-            this.BTNQUITTER.TabIndex = 3;
-            this.BTNQUITTER.Text = "Retour";
-            this.BTNQUITTER.UseVisualStyleBackColor = true;
-            this.BTNQUITTER.Click += new System.EventHandler(this.BTNQUITTER_Click_1);
-            // 
             // BTNSUPPRIMER
             // 
             this.BTNSUPPRIMER.BackColor = System.Drawing.SystemColors.Highlight;
@@ -602,27 +613,16 @@
             this.textnm.Size = new System.Drawing.Size(214, 19);
             this.textnm.TabIndex = 0;
             // 
-            // bunifuCustomLabel1
+            // BTNQUITTER
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(555, 16);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(116, 20);
-            this.bunifuCustomLabel1.TabIndex = 1;
-            this.bunifuCustomLabel1.Text = "Tapez le nom";
-            // 
-            // afficher
-            // 
-            this.afficher.BackColor = System.Drawing.SystemColors.Highlight;
-            this.afficher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.afficher.Location = new System.Drawing.Point(291, 24);
-            this.afficher.Name = "afficher";
-            this.afficher.Size = new System.Drawing.Size(107, 44);
-            this.afficher.TabIndex = 5;
-            this.afficher.Text = "Afficher";
-            this.afficher.UseVisualStyleBackColor = false;
-            this.afficher.Click += new System.EventHandler(this.button1_Click);
+            this.BTNQUITTER.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNQUITTER.Location = new System.Drawing.Point(781, 12);
+            this.BTNQUITTER.Name = "BTNQUITTER";
+            this.BTNQUITTER.Size = new System.Drawing.Size(145, 44);
+            this.BTNQUITTER.TabIndex = 3;
+            this.BTNQUITTER.Text = "Retour";
+            this.BTNQUITTER.UseVisualStyleBackColor = true;
+            this.BTNQUITTER.Click += new System.EventHandler(this.BTNQUITTER_Click_1);
             // 
             // Stagiaire
             // 
@@ -630,12 +630,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(965, 679);
+            this.ClientSize = new System.Drawing.Size(972, 679);
             this.Controls.Add(this.BTNQUITTER);
             this.Controls.Add(this.tabCstagiaire);
             this.ForeColor = System.Drawing.Color.Navy;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Stagiaire";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stagiaire";
             this.Load += new System.EventHandler(this.Stagiaire_Load);
             this.tabCstagiaire.ResumeLayout(false);

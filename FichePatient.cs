@@ -160,5 +160,12 @@ namespace medical_app
                 }
             }
         }
+
+        private void retour_Click(object sender, EventArgs e)
+        {
+            Medecin med = new Medecin();
+            med.Show();
+            this.Hide();
+        }
     }
     }

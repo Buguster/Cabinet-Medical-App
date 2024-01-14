@@ -123,7 +123,7 @@ namespace medical_app
         {
             if (BaseClass.type == "S")
             {
-                ordonnace.Visible = false;
+
             }
             else if (BaseClass.type == "M")
             {
@@ -137,6 +137,7 @@ namespace medical_app
             textBox1_TextChanged(sender, e);
             textBox2_TextChanged(sender, e);
             textBox3_TextChanged(sender, e);
+            textBox4_TextChanged(sender, e);
         }
 
         private void Rendez_vous_Click(object sender, EventArgs e)
@@ -219,5 +220,23 @@ namespace medical_app
             int total_RDV = TotalRDV();
             textBox3.Text = $"{total_RDV}";
         }
-    }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+           
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            Login h = new Login();
+            h.Show();
+            this.Hide();
+        }
+    } 
 }
+

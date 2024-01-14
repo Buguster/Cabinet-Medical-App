@@ -34,9 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ajouter = new System.Windows.Forms.Button();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.afficher = new System.Windows.Forms.Button();
-            this.supprimer = new System.Windows.Forms.Button();
-            this.Modifier = new System.Windows.Forms.Button();
             this.retour = new System.Windows.Forms.Button();
             this.OrdonnanceGrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -77,17 +74,14 @@
             this.bunifuGradientPanel1.Controls.Add(this.label2);
             this.bunifuGradientPanel1.Controls.Add(this.ajouter);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
-            this.bunifuGradientPanel1.Controls.Add(this.afficher);
-            this.bunifuGradientPanel1.Controls.Add(this.supprimer);
-            this.bunifuGradientPanel1.Controls.Add(this.Modifier);
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(653, 339);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(587, 511);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(215, 249);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(210, 80);
             this.bunifuGradientPanel1.TabIndex = 60;
             // 
             // label2
@@ -96,7 +90,7 @@
             this.label2.BackColor = System.Drawing.Color.Navy;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(2, 0);
+            this.label2.Location = new System.Drawing.Point(-3, -2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(213, 24);
             this.label2.TabIndex = 60;
@@ -123,48 +117,11 @@
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(0, 13);
             this.bunifuCustomLabel1.TabIndex = 59;
             // 
-            // afficher
-            // 
-            this.afficher.BackColor = System.Drawing.Color.Gray;
-            this.afficher.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.afficher.ForeColor = System.Drawing.Color.White;
-            this.afficher.Location = new System.Drawing.Point(43, 83);
-            this.afficher.Name = "afficher";
-            this.afficher.Size = new System.Drawing.Size(120, 39);
-            this.afficher.TabIndex = 58;
-            this.afficher.Text = "Afficher";
-            this.afficher.UseVisualStyleBackColor = false;
-            this.afficher.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // supprimer
-            // 
-            this.supprimer.BackColor = System.Drawing.Color.Red;
-            this.supprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supprimer.ForeColor = System.Drawing.Color.White;
-            this.supprimer.Location = new System.Drawing.Point(43, 127);
-            this.supprimer.Name = "supprimer";
-            this.supprimer.Size = new System.Drawing.Size(120, 39);
-            this.supprimer.TabIndex = 55;
-            this.supprimer.Text = "Supprimer";
-            this.supprimer.UseVisualStyleBackColor = false;
-            // 
-            // Modifier
-            // 
-            this.Modifier.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.Modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Modifier.ForeColor = System.Drawing.Color.White;
-            this.Modifier.Location = new System.Drawing.Point(43, 172);
-            this.Modifier.Name = "Modifier";
-            this.Modifier.Size = new System.Drawing.Size(120, 39);
-            this.Modifier.TabIndex = 57;
-            this.Modifier.Text = "Modifier";
-            this.Modifier.UseVisualStyleBackColor = false;
-            // 
             // retour
             // 
             this.retour.BackColor = System.Drawing.Color.AliceBlue;
             this.retour.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.retour.Location = new System.Drawing.Point(1004, 12);
+            this.retour.Location = new System.Drawing.Point(969, 12);
             this.retour.Name = "retour";
             this.retour.Size = new System.Drawing.Size(137, 37);
             this.retour.TabIndex = 10;
@@ -186,7 +143,7 @@
             this.type_medi,
             this.date_ordonnance,
             this.Print});
-            this.OrdonnanceGrid.Location = new System.Drawing.Point(37, 14);
+            this.OrdonnanceGrid.Location = new System.Drawing.Point(37, 12);
             this.OrdonnanceGrid.Name = "OrdonnanceGrid";
             this.OrdonnanceGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.OrdonnanceGrid.RowHeadersWidth = 50;
@@ -211,10 +168,10 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Gray;
+            this.button3.BackColor = System.Drawing.Color.DimGray;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(398, 365);
+            this.button3.Location = new System.Drawing.Point(398, 354);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(99, 39);
             this.button3.TabIndex = 58;
@@ -307,7 +264,7 @@
             // 
             this.Print.HeaderText = "PRINT";
             this.Print.Name = "Print";
-            this.Print.Text = "Print_Ordonnance";
+            this.Print.Text = "Print";
             // 
             // Ordonance
             // 
@@ -317,7 +274,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ordonance";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordonance";
             this.panel1.ResumeLayout(false);
             this.bunifuGradientPanel1.ResumeLayout(false);
@@ -335,7 +292,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView OrdonnanceGrid;
         private System.Windows.Forms.Button retour;
-        private System.Windows.Forms.Button supprimer;
         private Bunifu.Framework.UI.BunifuMetroTextbox type_medicaments;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuDatepicker DateTimepickerdateordo;
@@ -343,9 +299,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button ajouter;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button Modifier;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private System.Windows.Forms.Button afficher;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Ordonnance;

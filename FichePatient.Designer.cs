@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FichePatient));
             this.PatientGrid = new System.Windows.Forms.DataGridView();
-            this.load_patient = new System.Windows.Forms.Button();
             this.Id_Patient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nom_patient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prenom_Patient = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +41,10 @@
             this.Etat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Afficher = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.load_patient = new System.Windows.Forms.Button();
             this.inputsearchname = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.rechercher = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.retour = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PatientGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@
             this.Etat,
             this.Sexe,
             this.Afficher});
-            this.PatientGrid.Location = new System.Drawing.Point(27, 78);
+            this.PatientGrid.Location = new System.Drawing.Point(27, 165);
             this.PatientGrid.Name = "PatientGrid";
             this.PatientGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.PatientGrid.RowHeadersWidth = 50;
@@ -76,17 +77,6 @@
             this.PatientGrid.Size = new System.Drawing.Size(922, 505);
             this.PatientGrid.TabIndex = 6;
             this.PatientGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PatientGrid_CellContentClick);
-            // 
-            // load_patient
-            // 
-            this.load_patient.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.load_patient.Location = new System.Drawing.Point(27, 12);
-            this.load_patient.Name = "load_patient";
-            this.load_patient.Size = new System.Drawing.Size(204, 49);
-            this.load_patient.TabIndex = 8;
-            this.load_patient.Text = "Liste Des Patients";
-            this.load_patient.UseVisualStyleBackColor = true;
-            this.load_patient.Click += new System.EventHandler(this.button2_Click);
             // 
             // Id_Patient
             // 
@@ -144,6 +134,17 @@
             this.Afficher.Name = "Afficher";
             this.Afficher.Text = "afficher";
             // 
+            // load_patient
+            // 
+            this.load_patient.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.load_patient.Location = new System.Drawing.Point(27, 96);
+            this.load_patient.Name = "load_patient";
+            this.load_patient.Size = new System.Drawing.Size(204, 49);
+            this.load_patient.TabIndex = 8;
+            this.load_patient.Text = "Liste Des Patients";
+            this.load_patient.UseVisualStyleBackColor = true;
+            this.load_patient.Click += new System.EventHandler(this.button2_Click);
+            // 
             // inputsearchname
             // 
             this.inputsearchname.BackColor = System.Drawing.Color.MintCream;
@@ -157,7 +158,7 @@
             this.inputsearchname.LineIdleColor = System.Drawing.Color.Gray;
             this.inputsearchname.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.inputsearchname.LineThickness = 3;
-            this.inputsearchname.Location = new System.Drawing.Point(553, 17);
+            this.inputsearchname.Location = new System.Drawing.Point(620, 96);
             this.inputsearchname.Margin = new System.Windows.Forms.Padding(4);
             this.inputsearchname.Name = "inputsearchname";
             this.inputsearchname.Size = new System.Drawing.Size(183, 44);
@@ -182,7 +183,7 @@
             this.rechercher.IdleFillColor = System.Drawing.Color.White;
             this.rechercher.IdleForecolor = System.Drawing.Color.Navy;
             this.rechercher.IdleLineColor = System.Drawing.Color.Navy;
-            this.rechercher.Location = new System.Drawing.Point(745, 17);
+            this.rechercher.Location = new System.Drawing.Point(812, 96);
             this.rechercher.Margin = new System.Windows.Forms.Padding(5);
             this.rechercher.Name = "rechercher";
             this.rechercher.Size = new System.Drawing.Size(137, 41);
@@ -190,12 +191,25 @@
             this.rechercher.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rechercher.Click += new System.EventHandler(this.rechercher_Click);
             // 
+            // retour
+            // 
+            this.retour.BackColor = System.Drawing.Color.AliceBlue;
+            this.retour.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retour.Location = new System.Drawing.Point(27, 12);
+            this.retour.Name = "retour";
+            this.retour.Size = new System.Drawing.Size(137, 37);
+            this.retour.TabIndex = 73;
+            this.retour.Text = "Retour";
+            this.retour.UseVisualStyleBackColor = false;
+            this.retour.Click += new System.EventHandler(this.retour_Click);
+            // 
             // FichePatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(995, 613);
+            this.ClientSize = new System.Drawing.Size(1018, 692);
+            this.Controls.Add(this.retour);
             this.Controls.Add(this.rechercher);
             this.Controls.Add(this.inputsearchname);
             this.Controls.Add(this.load_patient);
@@ -203,6 +217,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FichePatient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FichePatient";
             this.Load += new System.EventHandler(this.FichePatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PatientGrid)).EndInit();
@@ -228,5 +243,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Afficher;
         private Bunifu.Framework.UI.BunifuMaterialTextbox inputsearchname;
         private Bunifu.Framework.UI.BunifuThinButton2 rechercher;
+        private System.Windows.Forms.Button retour;
     }
 }

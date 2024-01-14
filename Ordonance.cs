@@ -43,7 +43,7 @@ namespace medical_app
         }
         private void retour_Click(object sender, EventArgs e)
         {
-            Acceuil acceuil = new Acceuil();
+            Medecin acceuil = new Medecin();
             acceuil.Show();
             this.Hide();
         }
@@ -143,6 +143,11 @@ namespace medical_app
             PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
             printPreviewDialog.Document = pd;
             printPreviewDialog.ShowDialog();
+        }
+
+        private void Modifier_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
