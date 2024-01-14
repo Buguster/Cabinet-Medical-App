@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V8VLEwR1lakXqso5bINJy86cF1/dYy9OVwgLvgbX2K70BfUtCgI1tQExc6EvAPRydQ0r09bxWR7qdr+fLiir/w==",
+  "dgSpecHash": "Jf8t/KW2HIbdnG16q+uI7FE4j/+U5/tYCTKQHSx0c5CIFWg/WgSopPNLRw1Aw3gLOaO0+IbCwVsYoPLersc7tA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App Version2\\medical-app.csproj",
+  "projectFilePath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ouzat\\.nuget\\packages\\bunifu.ui.winforms\\6.3.0\\bunifu.ui.winforms.6.3.0.nupkg.sha512",
     "C:\\Users\\ouzat\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.6\\guna.ui2.winforms.2.0.4.6.nupkg.sha512"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App Version2\\medical-app.csproj": {}
+    "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App Version2\\medical-app.csproj": {
+    "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App Version2\\medical-app.csproj",
+        "projectUniqueName": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj",
         "projectName": "medical-app",
-        "projectPath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App Version2\\medical-app.csproj",
+        "projectPath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj",
         "packagesPath": "C:\\Users\\ouzat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App Version2\\obj\\",
+        "outputPath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -43,20 +43,6 @@
               "version": "[2.0.4.6, )"
             }
           }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-arm64": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
         }
       }
     }

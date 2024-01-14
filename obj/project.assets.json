@@ -34,142 +34,6 @@
           "lib/net48/Guna.UI2.dll": {}
         }
       }
-    },
-    ".NETFramework,Version=v4.8/win": {
-      "Bunifu.UI.WinForms/6.3.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Design"
-        ],
-        "compile": {
-          "lib/net452/Bunifu.Licensing.dll": {},
-          "lib/net452/Bunifu.UI.WinForms.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net452/Bunifu.Licensing.dll": {},
-          "lib/net452/Bunifu.UI.WinForms.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Guna.UI2.WinForms/2.0.4.6": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Design",
-          "System.Management",
-          "System.Web"
-        ],
-        "compile": {
-          "lib/net48/Guna.UI2.dll": {}
-        },
-        "runtime": {
-          "lib/net48/Guna.UI2.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.8/win-arm64": {
-      "Bunifu.UI.WinForms/6.3.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Design"
-        ],
-        "compile": {
-          "lib/net452/Bunifu.Licensing.dll": {},
-          "lib/net452/Bunifu.UI.WinForms.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net452/Bunifu.Licensing.dll": {},
-          "lib/net452/Bunifu.UI.WinForms.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Guna.UI2.WinForms/2.0.4.6": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Design",
-          "System.Management",
-          "System.Web"
-        ],
-        "compile": {
-          "lib/net48/Guna.UI2.dll": {}
-        },
-        "runtime": {
-          "lib/net48/Guna.UI2.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.8/win-x64": {
-      "Bunifu.UI.WinForms/6.3.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Design"
-        ],
-        "compile": {
-          "lib/net452/Bunifu.Licensing.dll": {},
-          "lib/net452/Bunifu.UI.WinForms.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net452/Bunifu.Licensing.dll": {},
-          "lib/net452/Bunifu.UI.WinForms.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Guna.UI2.WinForms/2.0.4.6": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Design",
-          "System.Management",
-          "System.Web"
-        ],
-        "compile": {
-          "lib/net48/Guna.UI2.dll": {}
-        },
-        "runtime": {
-          "lib/net48/Guna.UI2.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.8/win-x86": {
-      "Bunifu.UI.WinForms/6.3.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Design"
-        ],
-        "compile": {
-          "lib/net452/Bunifu.Licensing.dll": {},
-          "lib/net452/Bunifu.UI.WinForms.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net452/Bunifu.Licensing.dll": {},
-          "lib/net452/Bunifu.UI.WinForms.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Guna.UI2.WinForms/2.0.4.6": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Design",
-          "System.Management",
-          "System.Web"
-        ],
-        "compile": {
-          "lib/net48/Guna.UI2.dll": {}
-        },
-        "runtime": {
-          "lib/net48/Guna.UI2.dll": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -225,11 +89,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App Version2\\medical-app.csproj",
+      "projectUniqueName": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj",
       "projectName": "medical-app",
-      "projectPath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App Version2\\medical-app.csproj",
+      "projectPath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\medical-app.csproj",
       "packagesPath": "C:\\Users\\ouzat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App Version2\\obj\\",
+      "outputPath": "C:\\Users\\ouzat\\Desktop\\Cabinet-Medical-App\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -261,20 +125,6 @@
             "version": "[2.0.4.6, )"
           }
         }
-      }
-    },
-    "runtimes": {
-      "win": {
-        "#import": []
-      },
-      "win-arm64": {
-        "#import": []
-      },
-      "win-x64": {
-        "#import": []
-      },
-      "win-x86": {
-        "#import": []
       }
     }
   }

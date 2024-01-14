@@ -115,7 +115,6 @@ namespace medical_app
 
                     int affectedRows = command.ExecuteNonQuery();
                     afficher_Click(sender, e);
-                    MessageBox.Show($"{affectedRows} row(s) affected");
                 }
             }
             catch (SqlException ex)
@@ -134,7 +133,6 @@ namespace medical_app
 
                     if (myconn.State == ConnectionState.Open)
                     {
-                        MessageBox.Show("Connected successfully");
                         string query = "SELECT * FROM Patient ORDER BY id";
                         SqlCommand command = new SqlCommand(query, myconn);
 
@@ -142,7 +140,6 @@ namespace medical_app
                         {
                             if (data.HasRows)
                             {
-                                MessageBox.Show("There is data");
                                 PatientGrid.Rows.Clear();
                                 while (data.Read())
                                 {
@@ -152,13 +149,13 @@ namespace medical_app
                             }
                             else
                             {
-                                MessageBox.Show("Table is empty");
+                                MessageBox.Show("Table est vide");
                                     }
                                 }
                     }
                     else
                     {
-                        MessageBox.Show("Not connected");
+                        MessageBox.Show("n'est pas connecté");
                     }
                 }
                 catch (SqlException ex)
